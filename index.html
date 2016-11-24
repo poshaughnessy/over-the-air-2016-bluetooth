@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.png">
   <title>Web Bluetooth in Action</title>
   <style type="text/css">
     /*
@@ -175,7 +176,8 @@ body {
   align-items: flex-end;
 }
 
-.no-margin {
+.no-margin,
+.no-margin p {
   margin: 0;
 }
 
@@ -187,7 +189,7 @@ body {
 img {
   max-width: 100%;
   max-height: 100%;
-  max-height: calc(100vh - 3em); /* Allow space for captions by default */
+  max-height: calc(100vh - 4em); /* Allow space for captions by default */
 }
 
 .controls {
@@ -529,21 +531,60 @@ pre .xml .cdata {
   opacity: .5;
 }
 
-.hljs-keyword {
-  color: #704dff;
+/* Highlight.js theme - Atelier Cave Light */
+
+.hljs-comment,.hljs-quote {
+  color: #777777
 }
 
-.hljs-tag,
-.hljs-name {
-  color: #90f7f8;
+.hljs-variable,.hljs-template-variable,.hljs-attribute,.hljs-tag,.hljs-name,.hljs-regexp,.hljs-link,.hljs-name,.hljs-name,.hljs-selector-id,.hljs-selector-class {
+  color: #be4678
 }
 
-.hljs-string {
-  color: #987fff;
+.hljs-number,.hljs-meta,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params {
+  color: #aa573c
 }
 
-.hljs-title {
-  color: #673280;
+.hljs-string,.hljs-symbol,.hljs-bullet {
+  color: #2a9292
+}
+
+.hljs-title,.hljs-section {
+  color: #576ddb
+}
+
+.hljs-keyword,.hljs-selector-tag {
+  color: #955ae7
+}
+
+.hljs-deletion,.hljs-addition {
+  color: #19171c;
+  display: inline-block;
+  width: 100%
+}
+
+.hljs-deletion {
+  background-color: #be4678
+}
+
+.hljs-addition {
+  background-color: #2a9292
+}
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #efecf4;
+  color: #585260;
+  padding: 0.5em
+}
+
+.hljs-emphasis {
+  font-style: italic
+}
+
+.hljs-strong {
+  font-weight: bold
 }
 
 /* Media Queries */
@@ -709,7 +750,7 @@ pre .xml .cdata {
 <!-- -- -->
 
 <p><h2>Generic ATTributes (GATT)</h2>
-<img src="images/bluetooth-profiles-etc.png" alt="GATT" style="height:55%"/></p>
+<img src="images/bluetooth-profiles-etc.png" alt="GATT" style="max-height:70vh"/></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-14">
@@ -799,61 +840,76 @@ pre .xml .cdata {
   </div>
   <div class="slide hidden" id="slide-23">
     <section class="slide-content"><pre><code class="lang-javascript">  ...
-  .then(device =&gt; device.connectGATT())
+  .then(device =&gt; device.gatt.connect())
   .then(server =&gt; server.getPrimaryService(<span class="hljs-string">'batt_service'</span>))
-  .then(service =&gt; service.getCharacteristic(<span class="hljs-string">'batt_level'</span>))
+  .then(service =&gt; service.getCharacteristic(<span class="hljs-string">'batt_level'</span>))</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><pre><code class="lang-javascript">  ...
   .then(characteristic =&gt; {
     <span class="hljs-comment">// Read battery level</span>
     <span class="hljs-keyword">return</span> characteristic.readValue();
   })
   .then(value =&gt; {
-    <span class="hljs-keyword">let</span> batteryLevel = value.getUint8(<span class="hljs-number">0</span>);
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Battery level: <span class="hljs-subst">${batteryLevel}</span>`</span>);
+    <span class="hljs-keyword">var</span> batteryLevel = value.getUint8(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Battery level'</span>, batteryLevel);
   });</code></pre>
 <div class="caption"><a href="http://bit.ly/chrome-bluetooth-guide">bit.ly/chrome-bluetooth-guide</a></div></section>
   </div>
-  <div class="slide hidden" id="slide-24">
-    <section class="slide-content"><h2 id="the-sad-story-of-my-ota-demo-">The (sad) story of my OTA demo...</h2>
+  <div class="slide hidden  no-margin" id="slide-25">
+    <section class="slide-content"><p><img alt="BLE peripheral sim app" src="images/ble-peripheral-sim.png" style="min-width:45%"/></p>
+<div class="caption"><a href="http://bit.ly/ble-peripheral-sim">bit.ly/ble-peripheral-sim</a> (Android)</div></section>
+  </div>
+  <div class="slide hidden  no-margin" id="slide-26">
+    <section class="slide-content"><p><img alt="Bleno" src="images/bleno.png" style="width: 90%"/></p>
+<div class="caption"><a href="github.com/sandeepmistry/bleno">github.com/sandeepmistry/bleno</a></div></section>
+  </div>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><button id="btn-battery-demo">Battery demo</button></section>
+  </div>
+  <div class="slide hidden" id="slide-28">
+    <section class="slide-content"><h2 id="the-story-of-my-ota-demo-">The story of my OTA demo...</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-25">
+  <div class="slide hidden" id="slide-29">
     <section class="slide-content"><p><img alt="Bluetooth friends" src="images/bluetooth-friends.jpg" width="90%"/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-26">
+  <div class="slide hidden" id="slide-30">
     <section class="slide-content"><p class="no-margin"><img alt="CySmart" src="images/cysmart.png" style="max-height:calc(100vh - 4em)"/></p>
 <p class="caption"><a href="http://www.cypress.com/documentation/software-and-drivers/cysmart-bluetooth-le-test-and-debug-tool">CySmart with CySmart BLE dongle (Windows)</a></p></section>
   </div>
-  <div class="slide hidden" id="slide-27">
+  <div class="slide hidden" id="slide-31">
     <section class="slide-content"><p class="no-margin"><img alt="Bluetooth apps" src="images/bluetooth-debugging-apps.png" style="max-height:calc(100vh - 4em)"/></p>
 <p class="caption">Bluetooth debugging apps: LightBlue, Bluefruit, CySmart</p></section>
   </div>
-  <div class="slide hidden" id="slide-28">
+  <div class="slide hidden" id="slide-32">
     <section class="slide-content"><p class="no-margin"><img alt="Wireshark" src="images/adafruit-ble-sniff.jpg" style="max-height:calc(100vh - 4em)"/></p>
 <p class="caption"><a href="https://www.wireshark.org/">Wireshark</a> with <a href="https://shop.pimoroni.com/products/adafruit-bluefruit-le-sniffer-ble-4-0-nrf51822-v1-0">Bluefruit BLE sniffer</a></p></section>
   </div>
-  <div class="slide hidden" id="slide-29">
+  <div class="slide hidden" id="slide-33">
     <section class="slide-content"><h2 id="so-here-s-one-i-made-earlier-">So here&#39;s one I made earlier...</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-30">
+  <div class="slide hidden" id="slide-34">
     <section class="slide-content"><p class="no-margin"><img src="images/web-drone-screenshot.png" style="max-width:28%" alt="Web Drone Controller"/></p>
 <p class="caption"><a href="http://bit.ly/web-bluetooth-drone">bit.ly/web-bluetooth-drone</a></p></section>
   </div>
-  <div class="slide hidden" id="slide-31">
+  <div class="slide hidden" id="slide-35">
     <section class="slide-content"><h2 id="in-case-of-demo-fail">In case of demo fail</h2>
 <h3 id="-bit-ly-web-bluetooth-drone-vid-https-youtu-be-gxu3g3cg52k-"><a href="https://youtu.be/gXu3G3cg52k">bit.ly/web-bluetooth-drone-vid</a></h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-32">
+  <div class="slide hidden" id="slide-36">
     <section class="slide-content"><h2 id="code-time">Code time</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-33">
+  <div class="slide hidden" id="slide-37">
     <section class="slide-content"><h2 id="-the-physical-world-is-now-at-your-command-"><em>The physical world is now at your command</em></h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-34">
+  <div class="slide hidden" id="slide-38">
     <section class="slide-content"><h1>Thanks!</h1>
 
 <div class="group-closer">
@@ -894,6 +950,7 @@ function navigate(n) {
   updateProgress();
   updateURL();
   updateTabIndex();
+  updateDemos();
 }
 
 
@@ -1037,6 +1094,57 @@ document.body.addEventListener('touchend', function(e) {
     navigate(-1);
   }
 }, false);
+
+/**
+ * Custom demos added by Peter
+ */
+
+var batteryDemoButton = document.getElementById('btn-battery-demo');
+
+batteryDemoButton.addEventListener('click', bleBatteryDemo, false);
+
+function isElementVisible(el) {
+  return el.offsetParent !== null;
+}
+
+function updateDemos() {
+  // If we want to make things happen on slide change we can add that here (using isElementVisible)
+}
+
+function bleBatteryDemo() {
+
+  if (!navigator.bluetooth) {
+    return;
+  }
+
+  navigator.bluetooth.requestDevice({
+      filters: [{ services: ['battery_service'] }]
+    })
+    .then(function(device) {
+      console.log('Device', device.name);
+      return device.gatt.connect();
+    })
+    .then(function(server) {
+      //console.log('Server', server);
+      return server.getPrimaryService('battery_service');
+    })
+    .then(function(service) {
+      console.log('Service', service);
+      return service.getCharacteristic('battery_level');
+    })
+    .then(function(characteristic) {
+      console.log('Characteristic', characteristic);
+      return characteristic.readValue();
+    })
+    .then(function(value) {
+      console.log('Value', value);
+      var batteryLevel = value.getUint8(0);
+      console.log('Battery level', batteryLevel);
+    })
+    .catch(function(err) {
+      console.error('Bluetooth error', err);
+    });
+}
 
   </script>
 </body>
