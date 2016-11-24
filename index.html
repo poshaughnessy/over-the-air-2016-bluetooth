@@ -664,16 +664,17 @@ pre .xml .cdata {
 }
 
 #btn-battery-demo {
-  font-size: 2.5em;
-  padding: 8px;
+  font-size: 2.2em;
+  padding: 8px 16px;
   border: 0;
-  border-radius: 8px 12px;
-  background-color: #66d9ef;
+  border-radius: 8px;
+  background-color: #339ec1;
+  color: #fff;
   cursor: pointer;
 }
 
 #battery-demo-output {
-  font-size: 1.8em;
+  font-size: 2em;
   min-height: 3em;
 }
 
@@ -875,59 +876,89 @@ pre .xml .cdata {
     <section class="slide-content"><p><img alt="BLE peripheral sim app" src="images/ble-peripheral-sim.png" style="min-width:45%"/></p>
 <div class="caption"><a href="http://bit.ly/ble-peripheral-sim">bit.ly/ble-peripheral-sim</a> (Android)</div></section>
   </div>
-  <div class="slide hidden" id="slide-26">
-    <section class="slide-content"><p><button id="btn-battery-demo">Read battery level</button></p>
-<div id="battery-demo-output"></div></section>
-  </div>
-  <div class="slide hidden  no-margin" id="slide-27">
+  <div class="slide hidden  no-margin" id="slide-26">
     <section class="slide-content"><p><img alt="Bleno" src="images/bleno.png" style="width: 90%"/></p>
 <div class="caption"><a href="github.com/sandeepmistry/bleno">github.com/sandeepmistry/bleno</a></div></section>
   </div>
+  <div class="slide hidden  no-margin" id="slide-27">
+    <section class="slide-content"><p><img alt="Problems" src="images/ble-battery-demo-probs.png" style="max-width: 90%"/></p>
+<div class="caption">Problems! <a href="https://github.com/WebBluetoothCG/ble-test-peripheral-android/issues/68">But had a bit of help :)</a></div></section>
+  </div>
   <div class="slide hidden" id="slide-28">
-    <section class="slide-content"><h2 id="the-story-of-my-ota-demo-">The story of my OTA demo...</h2>
-</section>
+    <section class="slide-content"><p><button id="btn-battery-demo">Read battery level</button></p>
+<div id="battery-demo-output"></div></section>
   </div>
   <div class="slide hidden" id="slide-29">
-    <section class="slide-content"><p><img alt="Bluetooth friends" src="images/bluetooth-friends.jpg" width="90%"/></p>
+    <section class="slide-content"><h2 id="i-wanted-to-make-a-new-demo-">I wanted to make a new demo...</h2>
 </section>
   </div>
   <div class="slide hidden" id="slide-30">
-    <section class="slide-content"><p class="no-margin"><img alt="CySmart" src="images/cysmart.png" style="max-height:calc(100vh - 4em)"/></p>
-<p class="caption"><a href="http://www.cypress.com/documentation/software-and-drivers/cysmart-bluetooth-le-test-and-debug-tool">CySmart with CySmart BLE dongle (Windows)</a></p></section>
-  </div>
-  <div class="slide hidden" id="slide-31">
-    <section class="slide-content"><p class="no-margin"><img alt="Bluetooth apps" src="images/bluetooth-debugging-apps.png" style="max-height:calc(100vh - 4em)"/></p>
-<p class="caption">Bluetooth debugging apps: LightBlue, Bluefruit, CySmart</p></section>
-  </div>
-  <div class="slide hidden" id="slide-32">
-    <section class="slide-content"><p class="no-margin"><img alt="Wireshark" src="images/adafruit-ble-sniff.jpg" style="max-height:calc(100vh - 4em)"/></p>
-<p class="caption"><a href="https://www.wireshark.org/">Wireshark</a> with <a href="https://shop.pimoroni.com/products/adafruit-bluefruit-le-sniffer-ble-4-0-nrf51822-v1-0">Bluefruit BLE sniffer</a></p></section>
-  </div>
-  <div class="slide hidden" id="slide-33">
-    <section class="slide-content"><h2 id="so-here-s-one-i-made-earlier-">So here&#39;s one I made earlier...</h2>
+    <section class="slide-content"><p><img alt="Bluetooth friends" src="images/bluetooth-friends.jpg" width="90%"/></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-34">
+  <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><p><img alt="Hackaball" src="images/hackaball.jpg" width="90%"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h2 id="step-1-sniffing">Step 1: Sniffing</h2>
+</section>
+  </div>
+  <div class="slide hidden  no-margin" id="slide-33">
+    <section class="slide-content"><p><img alt="Wireshark" src="images/adafruit-ble-sniff.jpg" style="max-height:calc(100vh - 4em)"/></p>
+<p class="caption"><a href="https://www.wireshark.org/">Wireshark</a> with <a href="https://shop.pimoroni.com/products/adafruit-bluefruit-le-sniffer-ble-4-0-nrf51822-v1-0">Bluefruit BLE sniffer</a></p></section>
+  </div>
+  <div class="slide hidden  no-margin" id="slide-34">
+    <section class="slide-content"><p><img alt="ble-sniffer-osx" src="images/ble-sniffer-osx.png" style="max-height:calc(100vh - 4em)"/></p>
+<p class="caption"><a href="https://sourceforge.net/projects/nrfblesnifferosx/">ble-sniffer-osx</a></p></section>
+  </div>
+  <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><h2 id="step-2-exploring">Step 2: Exploring</h2>
+</section>
+  </div>
+  <div class="slide hidden  no-margin" id="slide-36">
+    <section class="slide-content"><p><img alt="CySmart" src="images/cysmart.png" style="max-height:calc(100vh - 4em)"/></p>
+<p class="caption"><a href="http://www.cypress.com/documentation/software-and-drivers/cysmart-bluetooth-le-test-and-debug-tool">CySmart with CySmart BLE dongle (Windows)</a></p></section>
+  </div>
+  <div class="slide hidden  no-margin" id="slide-37">
+    <section class="slide-content"><p><img alt="Bluetooth apps" src="images/bluetooth-debugging-apps.png" style="max-height:calc(100vh - 4em)"/></p>
+<p class="caption">Bluetooth debugging apps: <a href="https://itunes.apple.com/us/app/lightblue-explorer-bluetooth/id557428110?mt=8">LightBlue</a>, <a href="https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect&amp;hl=en">Bluefruit</a>, <a href="https://play.google.com/store/apps/details?id=com.cypress.cysmart&amp;hl=en">CySmart</a></p></section>
+  </div>
+  <div class="slide hidden  no-margin" id="slide-38">
+    <section class="slide-content"><p><img alt="Bluez" src="images/bluez-hcitool-gatttool.png" width="90%"/></p>
+<p class="caption"><a href="http://www.bluez.org/about/">BlueZ</a></p></section>
+  </div>
+  <div class="slide hidden" id="slide-39">
+    <section class="slide-content"><h2 id="more-reverse-engineering-required">More reverse engineering required</h2>
+<p><img src="images/reverse-engineer.gif" alt="Reverse" width="70%"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-40">
+    <section class="slide-content"><h2 id="so-here-s-one-i-made-earlier-">So here&#39;s one I made earlier...</h2>
+<p><img src="images/one-i-made-earlier.jpg" alt="Made earlier" width="50%"/></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-41">
     <section class="slide-content"><p class="no-margin"><img src="images/web-drone-screenshot.png" style="max-width:28%" alt="Web Drone Controller"/></p>
 <p class="caption"><a href="http://bit.ly/web-bluetooth-drone">bit.ly/web-bluetooth-drone</a></p></section>
   </div>
-  <div class="slide hidden" id="slide-35">
+  <div class="slide hidden" id="slide-42">
     <section class="slide-content"><h2 id="in-case-of-demo-fail">In case of demo fail</h2>
 <h3 id="-bit-ly-web-bluetooth-drone-vid-https-youtu-be-gxu3g3cg52k-"><a href="https://youtu.be/gXu3G3cg52k">bit.ly/web-bluetooth-drone-vid</a></h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-36">
+  <div class="slide hidden" id="slide-43">
     <section class="slide-content"><h2 id="code-time">Code time</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-37">
-    <section class="slide-content"><h2 id="-the-physical-world-is-now-at-your-command-"><em>The physical world is now at your command</em></h2>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><h2 id="-the-physical-world-is-br-now-at-your-command-"><em>The physical world is <br> now at your command</em></h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-38">
+  <div class="slide hidden" id="slide-45">
     <section class="slide-content"><h1>Thanks!</h1>
 
-<div class="group-closer">
+<div class="contact">
   <p>Peter O&#39;Shaughnessy</p>
   <p><a href="https://twitter.com/poshaughnessy">@poshaughnessy</a></p>
   <p><a href="https://twitter.com/samsunginternet">@samsunginternet</a></p>
