@@ -26,6 +26,7 @@ function navigate(n) {
   updateProgress();
   updateURL();
   updateTabIndex();
+  updateDemos();
 }
 
 
@@ -169,3 +170,54 @@ document.body.addEventListener('touchend', function(e) {
     navigate(-1);
   }
 }, false);
+
+/**
+ * Custom demos added by Peter
+ */
+
+var batteryDemoButton = document.getElementById('btn-battery-demo');
+
+batteryDemoButton.addEventListener('click', bleBatteryDemo, false);
+
+function isElementVisible(el) {
+  return el.offsetParent !== null;
+}
+
+function updateDemos() {
+  // If we want to make things happen on slide change we can add that here (using isElementVisible)
+}
+
+function bleBatteryDemo() {
+
+  if (!navigator.bluetooth) {
+    return;
+  }
+
+  navigator.bluetooth.requestDevice({
+      filters: [{ services: ['battery_service'] }]
+    })
+    .then(function(device) {
+      console.log('Device', device.name);
+      return device.gatt.connect();
+    })
+    .then(function(server) {
+      console.log('Server', server);
+      return server.getPrimaryService('battery_service');
+    })
+    .then(function(service) {
+      console.log('Service', service);
+      return service.getCharacteristic('battery_level');
+    })
+    .then(function(characteristic) {
+      console.log('Characteristic', characteristic);
+      return characteristic.readValue();
+    })
+    .then(function(value) {
+      console.log('Value', value);
+      var batteryLevel = value.getUint8(0);
+      console.log('Battery level', batteryLevel);
+    })
+    .catch(function(err) {
+      console.error('Bluetooth error', err);
+    });
+}

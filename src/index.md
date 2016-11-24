@@ -79,7 +79,7 @@ controls: false
 <!-- -- -->
 
 <h2>Generic ATTributes (GATT)</h2>
-<img src="images/bluetooth-profiles-etc.png" alt="GATT" style="height:55%"/>
+<img src="images/bluetooth-profiles-etc.png" alt="GATT" style="max-height:70vh"/>
 
 --
 
@@ -172,24 +172,44 @@ navigator.bluetooth.requestDevice({
 
 ```javascript
   ...
-  .then(device => device.connectGATT())
+  .then(device => device.gatt.connect())
   .then(server => server.getPrimaryService('batt_service'))
   .then(service => service.getCharacteristic('batt_level'))
+```
+
+--
+
+```javascript
+  ...
   .then(characteristic => {
     // Read battery level
     return characteristic.readValue();
   })
   .then(value => {
-    let batteryLevel = value.getUint8(0);
-    console.log(`Battery level: ${batteryLevel}`);
+    var batteryLevel = value.getUint8(0);
+    console.log('Battery level', batteryLevel);
   });
 ```
 
 <div class="caption">[bit.ly/chrome-bluetooth-guide](http://bit.ly/chrome-bluetooth-guide)</div>
 
+-- no-margin
+
+<img alt="BLE peripheral sim app" src="images/ble-peripheral-sim.png" style="min-width:45%"/>
+<div class="caption">[bit.ly/ble-peripheral-sim](http://bit.ly/ble-peripheral-sim) (Android)</div>
+
+-- no-margin
+
+<img alt="Bleno" src="images/bleno.png" style="width: 90%"/>
+<div class="caption">[github.com/sandeepmistry/bleno](github.com/sandeepmistry/bleno)</div>
+
 --
 
-## The (sad) story of my OTA demo...
+<button id="btn-battery-demo">Battery demo</button>
+
+--
+
+## The story of my OTA demo...
 
 --
 
