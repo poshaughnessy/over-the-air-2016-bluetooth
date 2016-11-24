@@ -663,6 +663,20 @@ pre .xml .cdata {
   max-width: 100px;
 }
 
+#btn-battery-demo {
+  font-size: 2.5em;
+  padding: 8px;
+  border: 0;
+  border-radius: 8px 12px;
+  background-color: #66d9ef;
+  cursor: pointer;
+}
+
+#battery-demo-output {
+  font-size: 1.8em;
+  min-height: 3em;
+}
+
 /* Print styles used for saving to PDF */
 @media print {
   * {
@@ -861,12 +875,13 @@ pre .xml .cdata {
     <section class="slide-content"><p><img alt="BLE peripheral sim app" src="images/ble-peripheral-sim.png" style="min-width:45%"/></p>
 <div class="caption"><a href="http://bit.ly/ble-peripheral-sim">bit.ly/ble-peripheral-sim</a> (Android)</div></section>
   </div>
-  <div class="slide hidden  no-margin" id="slide-26">
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><p><button id="btn-battery-demo">Read battery level</button></p>
+<div id="battery-demo-output"></div></section>
+  </div>
+  <div class="slide hidden  no-margin" id="slide-27">
     <section class="slide-content"><p><img alt="Bleno" src="images/bleno.png" style="width: 90%"/></p>
 <div class="caption"><a href="github.com/sandeepmistry/bleno">github.com/sandeepmistry/bleno</a></div></section>
-  </div>
-  <div class="slide hidden" id="slide-27">
-    <section class="slide-content"><button id="btn-battery-demo">Battery demo</button></section>
   </div>
   <div class="slide hidden" id="slide-28">
     <section class="slide-content"><h2 id="the-story-of-my-ota-demo-">The story of my OTA demo...</h2>
@@ -1100,6 +1115,7 @@ document.body.addEventListener('touchend', function(e) {
  */
 
 var batteryDemoButton = document.getElementById('btn-battery-demo');
+var batteryDemoOutput = document.getElementById('battery-demo-output');
 
 batteryDemoButton.addEventListener('click', bleBatteryDemo, false);
 
@@ -1108,7 +1124,11 @@ function isElementVisible(el) {
 }
 
 function updateDemos() {
-  // If we want to make things happen on slide change we can add that here (using isElementVisible)
+
+  if (isElementVisible(batteryDemoOutput)) {
+    batteryDemoOutput.innerHTML = '';
+  }
+
 }
 
 function bleBatteryDemo() {
@@ -1116,6 +1136,8 @@ function bleBatteryDemo() {
   if (!navigator.bluetooth) {
     return;
   }
+
+  batteryDemoOutput.innerHTML = '';
 
   navigator.bluetooth.requestDevice({
       filters: [{ services: ['battery_service'] }]
@@ -1137,9 +1159,9 @@ function bleBatteryDemo() {
       return characteristic.readValue();
     })
     .then(function(value) {
-      console.log('Value', value);
       var batteryLevel = value.getUint8(0);
       console.log('Battery level', batteryLevel);
+      batteryDemoOutput.innerHTML = 'Battery level: ' + batteryLevel;
     })
     .catch(function(err) {
       console.error('Bluetooth error', err);
