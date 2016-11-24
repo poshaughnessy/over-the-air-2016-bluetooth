@@ -656,16 +656,17 @@ pre .xml .cdata {
 }
 
 #btn-battery-demo {
-  font-size: 2.5em;
-  padding: 8px;
+  font-size: 2.2em;
+  padding: 8px 16px;
   border: 0;
-  border-radius: 8px 12px;
-  background-color: #66d9ef;
+  border-radius: 8px;
+  background-color: #339ec1;
+  color: #fff;
   cursor: pointer;
 }
 
 #battery-demo-output {
-  font-size: 1.8em;
+  font-size: 2em;
   min-height: 3em;
 }
 

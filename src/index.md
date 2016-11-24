@@ -198,19 +198,24 @@ navigator.bluetooth.requestDevice({
 <img alt="BLE peripheral sim app" src="images/ble-peripheral-sim.png" style="min-width:45%"/>
 <div class="caption">[bit.ly/ble-peripheral-sim](http://bit.ly/ble-peripheral-sim) (Android)</div>
 
---
-
-<button id="btn-battery-demo">Read battery level</button>
-<div id="battery-demo-output"></div>
-
 -- no-margin
 
 <img alt="Bleno" src="images/bleno.png" style="width: 90%"/>
 <div class="caption">[github.com/sandeepmistry/bleno](github.com/sandeepmistry/bleno)</div>
 
+-- no-margin
+
+<img alt="Problems" src="images/ble-battery-demo-probs.png" style="max-width: 90%"/>
+<div class="caption">Problems! [But had a bit of help :)](https://github.com/WebBluetoothCG/ble-test-peripheral-android/issues/68)</div>
+
 --
 
-## The story of my OTA demo...
+<button id="btn-battery-demo">Read battery level</button>
+<div id="battery-demo-output"></div>
+
+--
+
+## I wanted to make a new demo...
 
 --
 
@@ -218,22 +223,52 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<p class="no-margin"><img alt="CySmart" src="images/cysmart.png" style="max-height:calc(100vh - 4em)"/></p>
+<img alt="Hackaball" src="images/hackaball.jpg" width="90%"/>
+
+--
+
+## Step 1: Sniffing
+
+-- no-margin
+
+<img alt="Wireshark" src="images/adafruit-ble-sniff.jpg" style="max-height:calc(100vh - 4em)"/>
+<p class="caption">[Wireshark](https://www.wireshark.org/) with [Bluefruit BLE sniffer](https://shop.pimoroni.com/products/adafruit-bluefruit-le-sniffer-ble-4-0-nrf51822-v1-0)</p>
+
+-- no-margin
+
+<img alt="ble-sniffer-osx" src="images/ble-sniffer-osx.png" style="max-height:calc(100vh - 4em)"/>
+<p class="caption">[ble-sniffer-osx](https://sourceforge.net/projects/nrfblesnifferosx/)</p>
+
+--
+
+## Step 2: Exploring
+
+-- no-margin
+
+<img alt="CySmart" src="images/cysmart.png" style="max-height:calc(100vh - 4em)"/>
 <p class="caption">[CySmart with CySmart BLE dongle (Windows)](http://www.cypress.com/documentation/software-and-drivers/cysmart-bluetooth-le-test-and-debug-tool)</p>
 
+-- no-margin
+
+<img alt="Bluetooth apps" src="images/bluetooth-debugging-apps.png" style="max-height:calc(100vh - 4em)"/>
+<p class="caption">Bluetooth debugging apps: [LightBlue](https://itunes.apple.com/us/app/lightblue-explorer-bluetooth/id557428110?mt=8), [Bluefruit](https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect&hl=en), [CySmart](https://play.google.com/store/apps/details?id=com.cypress.cysmart&hl=en)</p>
+
+-- no-margin
+
+<img alt="Bluez" src="images/bluez-hcitool-gatttool.png" width="90%"/>
+<p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
+
 --
 
-<p class="no-margin"><img alt="Bluetooth apps" src="images/bluetooth-debugging-apps.png" style="max-height:calc(100vh - 4em)"/></p>
-<p class="caption">Bluetooth debugging apps: LightBlue, Bluefruit, CySmart</p>
+## More reverse engineering required
 
---
-
-<p class="no-margin"><img alt="Wireshark" src="images/adafruit-ble-sniff.jpg" style="max-height:calc(100vh - 4em)"/></p>
-<p class="caption">[Wireshark](https://www.wireshark.org/) with [Bluefruit BLE sniffer](https://shop.pimoroni.com/products/adafruit-bluefruit-le-sniffer-ble-4-0-nrf51822-v1-0)</p>
+<img src="images/reverse-engineer.gif" alt="Reverse" width="70%"/>
 
 --
 
 ## So here's one I made earlier...
+
+<img src="images/one-i-made-earlier.jpg" alt="Made earlier" width="50%"/>
 
 --
 
@@ -251,13 +286,13 @@ navigator.bluetooth.requestDevice({
 
 --
 
-## *The physical world is now at your command*
+## *The physical world is <br> now at your command*
 
 --
 
 <h1>Thanks!</h1>
 
-<div class="group-closer">
+<div class="contact">
   <p>Peter O'Shaughnessy</p>
   <p>[@poshaughnessy](https://twitter.com/poshaughnessy)</p>
   <p>[@samsunginternet](https://twitter.com/samsunginternet)</p>
