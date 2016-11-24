@@ -166,7 +166,7 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<img src="images/bluetooth-pairing-prompt.png" alt="Bluetooth pairing prompt" style="max-height:95%"/>
+<img src="images/bluetooth-pairing-prompt.png" alt="Bluetooth pairing prompt" style="max-height:calc(100vh - 4em)"/>
 
 --
 
