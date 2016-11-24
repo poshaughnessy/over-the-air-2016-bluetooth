@@ -841,8 +841,8 @@ pre .xml .cdata {
   <div class="slide hidden" id="slide-23">
     <section class="slide-content"><pre><code class="lang-javascript">  ...
   .then(device =&gt; device.gatt.connect())
-  .then(server =&gt; server.getPrimaryService(<span class="hljs-string">'batt_service'</span>))
-  .then(service =&gt; service.getCharacteristic(<span class="hljs-string">'batt_level'</span>))</code></pre>
+  .then(server =&gt; server.getPrimaryService(<span class="hljs-string">'battery_service'</span>))
+  .then(service =&gt; service.getCharacteristic(<span class="hljs-string">'battery_level'</span>))</code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-24">
@@ -1125,7 +1125,7 @@ function bleBatteryDemo() {
       return device.gatt.connect();
     })
     .then(function(server) {
-      //console.log('Server', server);
+      console.log('Server', server);
       return server.getPrimaryService('battery_service');
     })
     .then(function(service) {
