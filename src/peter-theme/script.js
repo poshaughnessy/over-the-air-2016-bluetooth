@@ -143,3 +143,29 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   }
 });
+
+/**
+ * Swipe handling added by Peter
+ */
+
+var SWIPE_X_MIN = 50,
+    startX;
+
+document.body.addEventListener('touchstart', function(e) {
+  e.preventDefault();
+  var touch = e.touches[0];
+  startX = touch.screenX;
+}, false);
+
+document.body.addEventListener('touchend', function(e) {
+  e.preventDefault();
+  var touch = e.changedTouches[0];
+  var swipeXDist = touch.screenX - startX;
+  if (swipeXDist < -SWIPE_X_MIN) {
+    // Swipe to left = move right
+    navigate(1);
+  } else if (swipeXDist > SWIPE_X_MIN) {
+    // Swipe to right = move left
+    navigate(-1);
+  }
+}, false);

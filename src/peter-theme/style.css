@@ -2,22 +2,40 @@
  * Based on github.com/sjaakvandenberg/cleaver-dark
  */
 
-/* Color Palette Based on Monokai
-
-white       : #fafafa
-light grey  : #efefef
-grey        : #75715e
-dark grey   : #272822
-black       : #191919
-
-light blue  : #66d9ef
-blue        : #1db4d0
-lavender    : #bf79db
-magenta     : #f92672
-light green : #a6e22e
-*/
-
 /* Local Fonts */
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Lora/Lora-Regular.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Lora/Lora-Bold.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/Lora/Lora-Italic.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/Lora/Lora-BoldItalic.ttf') format('truetype'),
+  url('fonts/Lora/Lora-BoldItalic.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -98,84 +116,13 @@ light green : #a6e22e
   url('fonts/opensans/800i.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/merriweather/400.woff2') format('woff2'),
-  url('fonts/merriweather/400.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 700;
-  src: url('fonts/merriweather/700.woff2') format('woff2'),
-  url('fonts/merriweather/700.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 900;
-  src: url('fonts/merriweather/900.woff2') format('woff2'),
-  url('fonts/merriweather/900.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 400;
-  src: url('fonts/merriweather/400i.woff2') format('woff2'),
-  url('fonts/merriweather/400i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 700;
-  src: url('fonts/merriweather/700i.woff2') format('woff2'),
-  url('fonts/merriweather/700i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 900;
-  src: url('fonts/merriweather/900i.woff2') format('woff2'),
-  url('fonts/merriweather/900i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/fira/400.woff2') format('woff2'),
-  url('fonts/fira/400.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 500;
-  src: url('fonts/fira/500.woff2') format('woff2'),
-  url('fonts/fira/500.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 700;
-  src: url('fonts/fira/700.woff2') format('woff2'),
-  url('fonts/fira/700.woff') format('woff');
-}
-
 /* Theme Styles */
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 100%;
-  background-color: #fff;
+  font-family: 'Lora', 'Georgia', serif;
+  font-size: 120%;
   text-align: center;
+  overflow: hidden;
+  color: #333;
 }
 
 html,
@@ -193,62 +140,47 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 4%;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  background-color: #fff;
   display: flex;
   align-items: center;
-  justify-items: center;
-  background-color: #fff;
+  justify-content: center;
 }
 
 .slide-content {
   width: 100%;
   height: auto;
-  padding: 0;
+  max-height: 100%;
+  padding: 1em;
+  box-sizing: border-box;
   margin: 0 auto;
-  font-size: 200%;
-  font-weight: 200;
   line-height: 1.375;
-  overflow: auto;
+  overflow: hidden;
+}
+
+.valign-top {
+  align-items: flex-start;
+}
+
+.valign-bottom {
+  align-items: flex-end;
 }
 
 .no-margin {
   margin: 0;
 }
 
-.group-closer {
-  margin-bottom: 1.5em;
-}
-
-.group-closer p {
+.contact p {
   margin-bottom: 0.5em;
+  font-size: 1.2em;
 }
 
 img {
   max-width: 100%;
   max-height: 100%;
-}
-
-.fill-w > * {
-  width: 100%;
-}
-
-.fill-h > * {
-  height: 100%;
-}
-
-.w-100 {
-  width: 100px;
-}
-
-.w-200 {
-  width: 200px;
-}
-
-.w-300 {
-  width: 300px;
+  max-height: calc(100vh - 3em); /* Allow space for captions by default */
 }
 
 .controls {
@@ -303,61 +235,73 @@ img {
   border-left-color: #272822;
 }
 
-h1,
-h2,
-h3 {
-  font-family: 'Merriweather', serif;
+h1, h2, h3, h4 {
+  font-family: 'Lora', 'Georgia', serif;
 }
 
 h1 {
   margin: 0 0 0.5em 0;
-  font-size: 250%;
-  line-height: 1.2;
+  font-size: 300%;
+  line-height: 1.5;
+  font-weight: normal;
+  transform: scaleX(1.05);
 }
 
 h2 {
   margin: 0 0 0.5em 0;
-  font-size: 150%;
-  font-weight: 200;
+  padding: 0 1em;
+  font-size: 200%;
   line-height: 1.4;
+  font-weight: normal;
+  transform: scaleX(1.05);
 }
 
-h2.vertical-center {
-  font-size: 180%;
-  position: relative;
-  top: -0.5em;
+h2:last-child {
+  margin-bottom: 0;
 }
 
 h3 {
-  margin: 0.5em 0;
-  font-size: 120%;
-  font-weight: 200;
+  margin: 0.5em 0 1em 0;
+  font-size: 175%;
   line-height: 1.4;
   border-bottom: none;
+  font-weight: normal;
 }
 
-ul {
+h4 {
+  margin: 0.5em 0 1em 0;
+  font-size: 130%;
+  line-height: 1.3;
+  border-bottom: none;
+  font-weight: normal;
+}
+
+ul,
+ol {
   margin: 0.5 0 1em 0;
   padding: 0 0 0 45px;
-  font-weight: 200;
   line-height: 1.4;
-  font-size: 1.15em;
+  font-size: 1.3em;
   display: inline-block;
 }
 
 li {
   text-align: left;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+li code {
+  font-size: 0.9em;
 }
 
 .long-list li {
-  margin-bottom: 0.1em;
+  font-size: 1em;
 }
 
 blockquote {
-  color: #444;
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 1.75em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -375,51 +319,8 @@ blockquote {
   width: 48%;
 }
 
-.author {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  flex-direction: column;
-}
-
-.author h1 {
-  margin-bottom: 30px;
-  font-size: 170%;
-  font-weight: 200;
-  text-align: center;
-}
-
-.author h3 {
-  font-size: 95%;
-  font-weight: 100;
-  text-align: center;
-  border: none;
-}
-
-.vertical-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-}
-
 p {
   margin: 0 0 1em 0;
-}
-
-.media-container {
-  max-height: -webkit-calc(95vh - 2em);
-  max-height: calc(95vh - 2em);
-  margin: 0;
-}
-
-.media-container.fill-h {
-  height: -webkit-calc(85vh - 2em);
-  height: calc(85vh - 2em);
-  margin-top: 4%;
 }
 
 a {
@@ -432,14 +333,13 @@ a:hover {
   border-bottom: 1px solid #66d9ef;
 }
 
-hr {
-  border: 1px solid #efefef;
-}
-
 pre {
   font-size: 75%;
   line-height: 1.3;
   text-align: left;
+  padding: 1em;
+  margin-bottom: 3em;
+  background: #fafafa;
 }
 
 table td,
@@ -470,23 +370,52 @@ table th {
   display: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .caption {
-  font-size: 0.7em;
+  font-family: 'Georgia', serif;
+  font-size: 0.9em;
   margin-top: 0.5em;
+  font-weight: normal;
+  text-shadow: none;
+  -webkit-text-stroke-width: 0;
+  color: #666;
+}
+
+.credits {
+  margin-top: 5em;
+  font-size: 0.5em;
+  font-weight: normal;
+  text-shadow: none;
+  -webkit-text-stroke-width: 0;
+}
+
+/* Quote by... */
+blockquote + p {
+  font-size: 0.9em;
+  margin-top: 1em;
 }
 
 /* Code Highlighting */
 code {
-  font-family: 'Fira Mono', Courier, sans-serif;
-  color: #333;
+  font-family: Courier, sans-serif;
   border-radius: 3px;
+  font-weight: 500;
+  text-shadow: none;
+  -webkit-text-stroke-width: 0;
+}
+
+pre {
+  display: inline-block;
+  border-radius: 1em;
 }
 
 pre code {
   display: block;
-  padding: .5em;
-  font-family: 'Fira Mono', Courier, sans-serif;
-  font-weight: 400;
+  font-size: 1.3em;
+  line-height: 1.5em;
   overflow-y: hidden;
   background: transparent;
 }
@@ -502,12 +431,7 @@ pre .lisp .title,
 pre .clojure .built_in,
 pre .nginx .title,
 pre .tex .special {
-  color: #f92672;
-}
-
-pre code {
-  color: #333;
-  font-size: 1.1em;
+  color: #704dff;
 }
 
 pre code .constant {
@@ -551,7 +475,7 @@ pre .apache .tag,
 pre .apache .cbracket,
 pre .tex .command,
 pre .prompt {
-  color: #a6e22e;
+  color: #987fff;
 }
 
 pre .comment,
@@ -564,7 +488,7 @@ pre .deletion,
 pre .shebang,
 pre .apache .sqbracket,
 pre .tex .formula {
-  color: #75715e;
+  color: #aaa;
 }
 
 pre .keyword,
@@ -598,14 +522,113 @@ pre .xml .cdata {
   opacity: .5;
 }
 
-#slide-21 code {
-  font-size: 1.3em;
+.hljs-keyword {
+  color: #704dff;
 }
 
-/* Media queries */
+.hljs-tag,
+.hljs-name {
+  color: #90f7f8;
+}
 
-@media (max-width: 600px) {
-  .slide-content {
-    font-size: 1em;
+.hljs-string {
+  color: #987fff;
+}
+
+.hljs-title {
+  color: #673280;
+}
+
+/* Media Queries */
+/* 640 x 480 is the default (1em) */
+
+/* 800 x 600 */
+@media (min-width: 800px) and (min-height: 600px) {
+    .slide {
+        font-size: 125%;
+    }
+}
+
+/* 1024 x 768 */
+@media (min-width: 1024px) and (min-height: 768px) {
+    .slide {
+        font-size: 160%;
+    }
+}
+
+/* 1152 x 864 */
+@media (min-width: 1152px) and (min-height: 864px) {
+    .slide {
+        font-size: 180%;
+    }
+}
+
+/* 1280 x 960 */
+@media (min-width: 1280px) and (min-height: 960px) {
+    .slide {
+        font-size: 200%;
+    }
+}
+
+/* 1440 x 1080 */
+@media (min-width: 1440px) and (min-height: 1080px) {
+    .slide {
+        font-size: 225%;
+    }
+}
+
+/* 1600 x 1200 */
+@media (min-width: 1600px) and (min-height: 1200px) {
+    .slide {
+        font-size: 250%;
+    }
+}
+
+/* 1920 x 1440 */
+@media (min-width: 1920px) and (min-height: 1440px) {
+    .slide {
+        font-size: 300%;
+    }
+}
+
+/* Override theme */
+@media (max-width: 850px) {
+  img {
+    width: auto;
+  }
+}
+
+/* Slide specific styles here */
+
+.contact {
+  margin-top: 2.5em;
+  font-family: 'Lora', Georgia, serif;
+}
+
+.corner-logos {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.corner-logos img {
+  max-width: 100px;
+}
+
+/* Print styles used for saving to PDF */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    display: flex;
+    page-break-after: always;
+    background-color: #fff;
   }
 }

@@ -2,379 +2,47 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web Bluetooth in Action</title>
   <style type="text/css">
-    body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #222;
-  font-size: 100%;
-}
-
-.slide {
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 0; right: 0;
-  background-color: #f7f7f7;
-}
-
-.slide-content {
-  width: 800px;
-  height: 600px;
-  overflow: hidden;
-  margin: 80px auto 0 auto;
-  padding: 30px;
-
-  font-weight: 200;
-  font-size: 200%;
-  line-height: 1.375;
-}
-
-.controls {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
-
-.arrow {
-  width: 0; height: 0;
-  border: 30px solid #333;
-  float: left;
-  margin-right: 30px;
-
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.prev {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
-
-  border-left-width: 0;
-  border-right-width: 50px;
-}
-
-.next {
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-  border-right-color: transparent;
-
-  border-left-width: 50px;
-  border-right-width: 0;
-}
-
-.prev:hover {
-  border-right-color: #888;
-  cursor: pointer;
-}
-
-.next:hover {
-  border-left-color: #888;
-  cursor: pointer;
-}
-
-h1 {
-  font-size: 300%;
-  line-height: 1.2;
-  text-align: center;
-  margin: 170px 0 0;
-}
-
-h2 {
-  font-size: 100%;
-  line-height: 1.2;
-  margin: 5px 0;
-  text-align: center;
-  font-weight: 200;
-}
-
-h3 {
-  font-size: 140%;
-  line-height: 1.2;
-  border-bottom: 1px solid #aaa;
-  margin: 0;
-  padding-bottom: 15px;
-}
-
-ul {
-  padding: 20px 0 0 60px;
-  font-weight: 200;
-  line-height: 1.375;
-}
-
-.author h1 {
-  font-size: 170%;
-  font-weight: 200;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.author h3 {
-  font-weight: 100;
-  text-align: center;
-  font-size: 95%;
-  border: none;
-}
-
-a {
-  text-decoration: none;
-  color: #44a4dd;
-}
-
-a:hover {
-  color: #66b5ff;
-}
-
-pre {
-  font-size: 60%;
-  line-height: 1.3;
-}
-
-.progress {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-}
-
-.progress-bar {
-  width: 0%;
-  height: 3px;
-  background-color: #b4b4b4;
-
-  -webkit-transition: width 0.05s ease-out;
-  -moz-transition: width 0.05s ease-out;
-  -o-transition: width 0.05s ease-out;
-  transition: width 0.05s ease-out;
-}
-
-.hidden {
-  display: none;
-}
-
-@media (max-width: 850px) {
-
-  body {
-    font-size: 70%;
-  }
-
-  .slide-content {
-    width: auto;
-  }
-
-  img {
-    width: 100%;
-  }
-
-  h1 {
-    margin-top: 120px;
-  }
-
-  .prev, .prev:hover {
-    border-right-color: rgba(135, 135, 135, 0.5);
-  }
-
-  .next, .next:hover {
-    border-left-color: rgba(135, 135, 135, 0.5);
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    font-size: 50%;
-    overflow: hidden;
-  }
-
-  .slide-content {
-    padding: 10px;
-    margin-top: 10px;
-    height: 340px;
-  }
-
-  h1 {
-    margin-top: 50px;
-  }
-
-  ul {
-    padding-left: 25px;
-  }
-}
-
-@media print {
-  * {
-    -webkit-print-color-adjust: exact;
-  }
-
-  @page {
-    size: letter;
-  }
-
-  .hidden {
-    display: inline;
-  }
-
-  html {
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-  }
-
-  body {
-    margin: 0 auto !important;
-    border: 0;
-    padding: 0;
-    float: none !important;
-    overflow: visible;
-    background: none !important;
-    font-size: 52%;
-  }
-
-  .progress, .controls {
-    display: none;
-  }
-
-  .slide {
-    position: static;
-  }
-
-  .slide-content {
-    border: 1px solid #222;
-    margin-top: 0;
-    margin-bottom: 40px;
-    height: 3.5in;
-    overflow: visible;
-  }
-
-  .slide:nth-child(even) {
-    /* 2 slides per page */
-    page-break-before: always;
-  }
-}
-
-/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold;
-}
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
-}
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-regexp,
-.hljs-link {
-  color: #009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
-}
-
-.hljs-meta {
-  color: #999;
-  font-weight: bold;
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-/*
+    /*
  * Based on github.com/sjaakvandenberg/cleaver-dark
  */
 
-/* Color Palette Based on Monokai
-
-white       : #fafafa
-light grey  : #efefef
-grey        : #75715e
-dark grey   : #272822
-black       : #191919
-
-light blue  : #66d9ef
-blue        : #1db4d0
-lavender    : #bf79db
-magenta     : #f92672
-light green : #a6e22e
-*/
-
 /* Local Fonts */
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/Lora/Lora-Regular.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Lora/Lora-Bold.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/Lora/Lora-Italic.ttf') format('truetype'),
+  url('fonts/Lora/Lora-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/Lora/Lora-BoldItalic.ttf') format('truetype'),
+  url('fonts/Lora/Lora-BoldItalic.ttf') format('truetype');
+}
+
 @font-face {
   font-family: 'Open Sans';
   font-style: normal;
@@ -455,84 +123,13 @@ light green : #a6e22e
   url('fonts/opensans/800i.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/merriweather/400.woff2') format('woff2'),
-  url('fonts/merriweather/400.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 700;
-  src: url('fonts/merriweather/700.woff2') format('woff2'),
-  url('fonts/merriweather/700.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: normal;
-  font-weight: 900;
-  src: url('fonts/merriweather/900.woff2') format('woff2'),
-  url('fonts/merriweather/900.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 400;
-  src: url('fonts/merriweather/400i.woff2') format('woff2'),
-  url('fonts/merriweather/400i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 700;
-  src: url('fonts/merriweather/700i.woff2') format('woff2'),
-  url('fonts/merriweather/700i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Merriweather';
-  font-style: italic;
-  font-weight: 900;
-  src: url('fonts/merriweather/900i.woff2') format('woff2'),
-  url('fonts/merriweather/900i.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('fonts/fira/400.woff2') format('woff2'),
-  url('fonts/fira/400.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 500;
-  src: url('fonts/fira/500.woff2') format('woff2'),
-  url('fonts/fira/500.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Fira Mono';
-  font-style: normal;
-  font-weight: 700;
-  src: url('fonts/fira/700.woff2') format('woff2'),
-  url('fonts/fira/700.woff') format('woff');
-}
-
 /* Theme Styles */
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 100%;
-  background-color: #fff;
+  font-family: 'Lora', 'Georgia', serif;
+  font-size: 120%;
   text-align: center;
+  overflow: hidden;
+  color: #333;
 }
 
 html,
@@ -550,62 +147,47 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 4%;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  background-color: #fff;
   display: flex;
   align-items: center;
-  justify-items: center;
-  background-color: #fff;
+  justify-content: center;
 }
 
 .slide-content {
   width: 100%;
   height: auto;
-  padding: 0;
+  max-height: 100%;
+  padding: 1em;
+  box-sizing: border-box;
   margin: 0 auto;
-  font-size: 200%;
-  font-weight: 200;
   line-height: 1.375;
-  overflow: auto;
+  overflow: hidden;
+}
+
+.valign-top {
+  align-items: flex-start;
+}
+
+.valign-bottom {
+  align-items: flex-end;
 }
 
 .no-margin {
   margin: 0;
 }
 
-.group-closer {
-  margin-bottom: 1.5em;
-}
-
-.group-closer p {
+.contact p {
   margin-bottom: 0.5em;
+  font-size: 1.2em;
 }
 
 img {
   max-width: 100%;
   max-height: 100%;
-}
-
-.fill-w > * {
-  width: 100%;
-}
-
-.fill-h > * {
-  height: 100%;
-}
-
-.w-100 {
-  width: 100px;
-}
-
-.w-200 {
-  width: 200px;
-}
-
-.w-300 {
-  width: 300px;
+  max-height: calc(100vh - 3em); /* Allow space for captions by default */
 }
 
 .controls {
@@ -660,61 +242,73 @@ img {
   border-left-color: #272822;
 }
 
-h1,
-h2,
-h3 {
-  font-family: 'Merriweather', serif;
+h1, h2, h3, h4 {
+  font-family: 'Lora', 'Georgia', serif;
 }
 
 h1 {
   margin: 0 0 0.5em 0;
-  font-size: 250%;
-  line-height: 1.2;
+  font-size: 300%;
+  line-height: 1.5;
+  font-weight: normal;
+  transform: scaleX(1.05);
 }
 
 h2 {
   margin: 0 0 0.5em 0;
-  font-size: 150%;
-  font-weight: 200;
+  padding: 0 1em;
+  font-size: 200%;
   line-height: 1.4;
+  font-weight: normal;
+  transform: scaleX(1.05);
 }
 
-h2.vertical-center {
-  font-size: 180%;
-  position: relative;
-  top: -0.5em;
+h2:last-child {
+  margin-bottom: 0;
 }
 
 h3 {
-  margin: 0.5em 0;
-  font-size: 120%;
-  font-weight: 200;
+  margin: 0.5em 0 1em 0;
+  font-size: 175%;
   line-height: 1.4;
   border-bottom: none;
+  font-weight: normal;
 }
 
-ul {
+h4 {
+  margin: 0.5em 0 1em 0;
+  font-size: 130%;
+  line-height: 1.3;
+  border-bottom: none;
+  font-weight: normal;
+}
+
+ul,
+ol {
   margin: 0.5 0 1em 0;
   padding: 0 0 0 45px;
-  font-weight: 200;
   line-height: 1.4;
-  font-size: 1.15em;
+  font-size: 1.3em;
   display: inline-block;
 }
 
 li {
   text-align: left;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+li code {
+  font-size: 0.9em;
 }
 
 .long-list li {
-  margin-bottom: 0.1em;
+  font-size: 1em;
 }
 
 blockquote {
-  color: #444;
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 1.75em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -732,51 +326,8 @@ blockquote {
   width: 48%;
 }
 
-.author {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  flex-direction: column;
-}
-
-.author h1 {
-  margin-bottom: 30px;
-  font-size: 170%;
-  font-weight: 200;
-  text-align: center;
-}
-
-.author h3 {
-  font-size: 95%;
-  font-weight: 100;
-  text-align: center;
-  border: none;
-}
-
-.vertical-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100%;
-  margin: 0;
-}
-
 p {
   margin: 0 0 1em 0;
-}
-
-.media-container {
-  max-height: -webkit-calc(95vh - 2em);
-  max-height: calc(95vh - 2em);
-  margin: 0;
-}
-
-.media-container.fill-h {
-  height: -webkit-calc(85vh - 2em);
-  height: calc(85vh - 2em);
-  margin-top: 4%;
 }
 
 a {
@@ -789,14 +340,13 @@ a:hover {
   border-bottom: 1px solid #66d9ef;
 }
 
-hr {
-  border: 1px solid #efefef;
-}
-
 pre {
   font-size: 75%;
   line-height: 1.3;
   text-align: left;
+  padding: 1em;
+  margin-bottom: 3em;
+  background: #fafafa;
 }
 
 table td,
@@ -827,23 +377,52 @@ table th {
   display: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .caption {
-  font-size: 0.7em;
+  font-family: 'Georgia', serif;
+  font-size: 0.9em;
   margin-top: 0.5em;
+  font-weight: normal;
+  text-shadow: none;
+  -webkit-text-stroke-width: 0;
+  color: #666;
+}
+
+.credits {
+  margin-top: 5em;
+  font-size: 0.5em;
+  font-weight: normal;
+  text-shadow: none;
+  -webkit-text-stroke-width: 0;
+}
+
+/* Quote by... */
+blockquote + p {
+  font-size: 0.9em;
+  margin-top: 1em;
 }
 
 /* Code Highlighting */
 code {
-  font-family: 'Fira Mono', Courier, sans-serif;
-  color: #333;
+  font-family: Courier, sans-serif;
   border-radius: 3px;
+  font-weight: 500;
+  text-shadow: none;
+  -webkit-text-stroke-width: 0;
+}
+
+pre {
+  display: inline-block;
+  border-radius: 1em;
 }
 
 pre code {
   display: block;
-  padding: .5em;
-  font-family: 'Fira Mono', Courier, sans-serif;
-  font-weight: 400;
+  font-size: 1.3em;
+  line-height: 1.5em;
   overflow-y: hidden;
   background: transparent;
 }
@@ -859,12 +438,7 @@ pre .lisp .title,
 pre .clojure .built_in,
 pre .nginx .title,
 pre .tex .special {
-  color: #f92672;
-}
-
-pre code {
-  color: #333;
-  font-size: 1.1em;
+  color: #704dff;
 }
 
 pre code .constant {
@@ -908,7 +482,7 @@ pre .apache .tag,
 pre .apache .cbracket,
 pre .tex .command,
 pre .prompt {
-  color: #a6e22e;
+  color: #987fff;
 }
 
 pre .comment,
@@ -921,7 +495,7 @@ pre .deletion,
 pre .shebang,
 pre .apache .sqbracket,
 pre .tex .formula {
-  color: #75715e;
+  color: #aaa;
 }
 
 pre .keyword,
@@ -955,15 +529,114 @@ pre .xml .cdata {
   opacity: .5;
 }
 
-#slide-21 code {
-  font-size: 1.3em;
+.hljs-keyword {
+  color: #704dff;
 }
 
-/* Media queries */
+.hljs-tag,
+.hljs-name {
+  color: #90f7f8;
+}
 
-@media (max-width: 600px) {
-  .slide-content {
-    font-size: 1em;
+.hljs-string {
+  color: #987fff;
+}
+
+.hljs-title {
+  color: #673280;
+}
+
+/* Media Queries */
+/* 640 x 480 is the default (1em) */
+
+/* 800 x 600 */
+@media (min-width: 800px) and (min-height: 600px) {
+    .slide {
+        font-size: 125%;
+    }
+}
+
+/* 1024 x 768 */
+@media (min-width: 1024px) and (min-height: 768px) {
+    .slide {
+        font-size: 160%;
+    }
+}
+
+/* 1152 x 864 */
+@media (min-width: 1152px) and (min-height: 864px) {
+    .slide {
+        font-size: 180%;
+    }
+}
+
+/* 1280 x 960 */
+@media (min-width: 1280px) and (min-height: 960px) {
+    .slide {
+        font-size: 200%;
+    }
+}
+
+/* 1440 x 1080 */
+@media (min-width: 1440px) and (min-height: 1080px) {
+    .slide {
+        font-size: 225%;
+    }
+}
+
+/* 1600 x 1200 */
+@media (min-width: 1600px) and (min-height: 1200px) {
+    .slide {
+        font-size: 250%;
+    }
+}
+
+/* 1920 x 1440 */
+@media (min-width: 1920px) and (min-height: 1440px) {
+    .slide {
+        font-size: 300%;
+    }
+}
+
+/* Override theme */
+@media (max-width: 850px) {
+  img {
+    width: auto;
+  }
+}
+
+/* Slide specific styles here */
+
+.contact {
+  margin-top: 2.5em;
+  font-family: 'Lora', Georgia, serif;
+}
+
+.corner-logos {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.corner-logos img {
+  max-width: 100px;
+}
+
+/* Print styles used for saving to PDF */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    display: flex;
+    page-break-after: always;
+    background-color: #fff;
   }
 }
 
@@ -976,19 +649,19 @@ pre .xml .cdata {
 
   <div class="slide" id="slide-1">
     <section class="slide-content"><h1 id="web-bluetooth-br-in-action">Web Bluetooth <br> in Action</h1>
-<p><img src="images/ble-logo.png" alt="BLE logo" class="w-100"/></p>
-<div class="group-closer">
+<p><img src="images/ble-logo.png" alt="BLE logo" style="width:12%;"/></p>
+<div class="contact">
   <p>Peter O&#39;Shaughnessy</p>
   <p><a href="https://twitter.com/poshaughnessy">@poshaughnessy</a></p>
 </div></section>
   </div>
   <div class="slide hidden" id="slide-2">
     <section class="slide-content"><p><h2>Samsung Internet</h2></p>
-<p class="no-margin"><img src="images/samsunginternet5.png" alt="Samsung Internet" width="40%"></p>
+<p class="no-margin"><img src="images/samsunginternet5.png" alt="Samsung Internet" style="width:37%"></p>
 <p class="caption"><a href="http://bit.ly/what-is-samsung-internet">bit.ly/what-is-samsung-internet</a></p></section>
   </div>
   <div class="slide hidden" id="slide-3">
-    <section class="slide-content"><p class="media-container fill-h"><img src="images/bybox-stockonnect.gif" alt="ByBox"></p>
+    <section class="slide-content"><p class="no-margin"><img alt="ByBox" src="images/bybox-stockonnect.gif" style="width:90%; max-height:calc(100vh - 4em)"/></p>
 <p class="caption"><a href="https://www.bybox.com/">ByBox Stockonnect app by pebble {code} and ByBox</a></p></section>
   </div>
   <div class="slide hidden" id="slide-4">
@@ -1004,14 +677,15 @@ pre .xml .cdata {
 </section>
   </div>
   <div class="slide hidden" id="slide-7">
-    <section class="slide-content"><p class="media-container fill-h"><img src="images/smart-scarf.jpg" alt="Smart Scarf"></p></section>
+    <section class="slide-content"><p class="no-margin"><img alt="Smart Scarf" src="images/smart-scarf.jpg" style="width:90%; max-height:calc(100vh - 4em)"/></p>
+<p class="caption"><a href="https://www.kickstarter.com/projects/679116019/smart-scarf-1st-scarf-that-connects-with-your-phon">Smart Scarf</a></p></section>
   </div>
   <div class="slide hidden" id="slide-8">
     <section class="slide-content"><h2 id="but-some-are-fun-">But some are fun...</h2>
 </section>
   </div>
   <div class="slide hidden" id="slide-9">
-    <section class="slide-content"><p class="media-container fill-h"><img src="images/anki-overdrive.gif" alt="Anki Overdrive"></p>
+    <section class="slide-content"><p class="no-margin"><img alt="Anki Overdrive" src="images/anki-overdrive.gif" style="width:90%; max-height:calc(100vh - 4em)"/></p>
 <p class="caption"><a href="https://anki.com">Anki Overdrive</a></p></section>
   </div>
   <div class="slide hidden" id="slide-10">
@@ -1019,12 +693,12 @@ pre .xml .cdata {
 </section>
   </div>
   <div class="slide hidden" id="slide-11">
-    <section class="slide-content"><p class="media-container fill-h"><img src="images/smart-watch.jpg" alt="Smart Monitor SmartWatch"></p>
+    <section class="slide-content"><p class="no-margin"><img alt="Smart Monitor SmartWatch" src="images/smart-watch.jpg" style="min-width:80%; max-height:calc(100vh - 4em)"/></p>
 <p class="caption"><a href="http://smart-monitor.com/">Smart Monitor</a> via <a href="https://www.wearable-technologies.com/2016/05/wearable-can-save-lives/">wearable-technologies.com</a></p></section>
   </div>
   <div class="slide hidden" id="slide-12">
     <section class="slide-content"><h2 id="bluetooth-low-energy">Bluetooth Low Energy</h2>
-<p><img src="images/ble-phone.png" alt="BLE"></p>
+<p><img alt="BLE" src="images/ble-phone.png" style="width:60%"/></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-13">
@@ -1034,14 +708,17 @@ pre .xml .cdata {
 <!--* ~100 kbps throughput (vs 24 Mbps!)-->
 <!-- -- -->
 
-<p><h2>Generic ATTributes (GATT)</h2></p>
-<p class="media-container"><img src="images/bluetooth-profiles-etc.png" alt="GATT" width="40%"/></p></section>
+<p><h2>Generic ATTributes (GATT)</h2>
+<img src="images/bluetooth-profiles-etc.png" alt="GATT" style="height:55%"/></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-14">
-    <section class="slide-content"><p class="media-container"><img src="images/ble-characteristic-props.png" alt="BLE characteristic properties" width="75%"/></p></section>
+    <section class="slide-content"><p><img src="images/ble-characteristic-props.png" alt="BLE characteristic properties" width="75%"/></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-15">
-    <section class="slide-content"><p class="media-container fill-w"><img src="images/bybox-comms.png" alt="BLE comms"></p></section>
+    <section class="slide-content"><p><img src="images/bybox-comms.png" alt="ByBox comms" width="85%"/></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-16">
     <section class="slide-content"><!--## Hex in JavaScript-->
@@ -1076,29 +753,29 @@ pre .xml .cdata {
 <!-- -- -->
 
 <ul>
-<li>Node <em>(desktop, native)</em></li>
-<li>React Native <em>(mobile, native/hybrid)</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-<li>Cordova <em>(mobile, hybrid)</em></li>
+<li>Node <em>(desktop)</em></li>
+<li>React Native <em>(mobile)</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+<li>Cordova <em>(mobile)</em><br/><br/></li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-17">
     <section class="slide-content"><ul>
-<li>Node <em>(desktop, native)</em></li>
-<li>React Native <em>(mobile, native/hybrid)</em></li>
-<li>Cordova <em>(mobile, hybrid)</em></li>
-<li><strong>Web Bluetooth</strong> <em>(desktop/mobile, web)</em></li>
+<li>Node <em>(desktop)</em></li>
+<li>React Native <em>(mobile)</em></li>
+<li>Cordova <em>(mobile)</em></li>
+<li><strong>Web Bluetooth</strong> <em>(desktop/mobile)</em></li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-18">
-    <section class="slide-content"><p><img src="images/web-bluetooth-caniuse.png" alt="caniuse.com"></p>
-<p class="caption">caniuse.com</p></section>
+    <section class="slide-content"><p><img alt="caniuse.com" src="images/web-bluetooth-caniuse.png" style="width:90%"/></p>
+<p class="caption"><a href="http://caniuse.com">caniuse.com</a></p></section>
   </div>
   <div class="slide hidden" id="slide-19">
     <section class="slide-content"><h2 id="chrome-origin-trial">Chrome Origin Trial</h2>
-<p>Until late Jan 2017</p>
-<p><a href="http://bit.ly/WebBluetoothOriginTrial">bit.ly/WebBluetoothOriginTrial</a></p>
+<h4 id="until-late-jan-2017">Until late Jan 2017</h4>
+<h4 id="-bit-ly-webbluetoothorigintrial-http-bit-ly-webbluetoothorigintrial-"><a href="http://bit.ly/WebBluetoothOriginTrial">bit.ly/WebBluetoothOriginTrial</a></h4>
 </section>
   </div>
   <div class="slide hidden" id="slide-20">
@@ -1117,7 +794,8 @@ pre .xml .cdata {
 </section>
   </div>
   <div class="slide hidden" id="slide-22">
-    <section class="slide-content"><p class="media-container fill-h"><img src="images/bluetooth-pairing-prompt.png" alt="Bluetooth pairing prompt"/></p></section>
+    <section class="slide-content"><p><img src="images/bluetooth-pairing-prompt.png" alt="Bluetooth pairing prompt" style="max-height:95%"/></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-23">
     <section class="slide-content"><pre><code class="lang-javascript">  ...
@@ -1139,18 +817,19 @@ pre .xml .cdata {
 </section>
   </div>
   <div class="slide hidden" id="slide-25">
-    <section class="slide-content"><p class="media-container"><img src="images/bluetooth-friends.jpg" alt="Bluetooth friends"></p></section>
+    <section class="slide-content"><p><img alt="Bluetooth friends" src="images/bluetooth-friends.jpg" width="90%"/></p>
+</section>
   </div>
   <div class="slide hidden" id="slide-26">
-    <section class="slide-content"><p class="media-container fill-h"><img src="images/cysmart.png" alt="CySmart"></p>
+    <section class="slide-content"><p class="no-margin"><img alt="CySmart" src="images/cysmart.png" style="max-height:calc(100vh - 4em)"/></p>
 <p class="caption"><a href="http://www.cypress.com/documentation/software-and-drivers/cysmart-bluetooth-le-test-and-debug-tool">CySmart with CySmart BLE dongle (Windows)</a></p></section>
   </div>
   <div class="slide hidden" id="slide-27">
-    <section class="slide-content"><p class="media-container"><img src="images/bluetooth-debugging-apps.png" alt="CySmart app"></p>
+    <section class="slide-content"><p class="no-margin"><img alt="Bluetooth apps" src="images/bluetooth-debugging-apps.png" style="max-height:calc(100vh - 4em)"/></p>
 <p class="caption">Bluetooth debugging apps: LightBlue, Bluefruit, CySmart</p></section>
   </div>
   <div class="slide hidden" id="slide-28">
-    <section class="slide-content"><p class="media-container fill-h"><img src="images/adafruit-ble-sniff.jpg" alt="Wireshark"></p>
+    <section class="slide-content"><p class="no-margin"><img alt="Wireshark" src="images/adafruit-ble-sniff.jpg" style="max-height:calc(100vh - 4em)"/></p>
 <p class="caption"><a href="https://www.wireshark.org/">Wireshark</a> with <a href="https://shop.pimoroni.com/products/adafruit-bluefruit-le-sniffer-ble-4-0-nrf51822-v1-0">Bluefruit BLE sniffer</a></p></section>
   </div>
   <div class="slide hidden" id="slide-29">
@@ -1158,20 +837,21 @@ pre .xml .cdata {
 </section>
   </div>
   <div class="slide hidden" id="slide-30">
-    <section class="slide-content"><p><h2>Demo</h2></p>
-<p class="no-margin"><img src="images/web-drone-screenshot.png" width="30%" alt="Web Drone Controller"/></p>
+    <section class="slide-content"><p class="no-margin"><img src="images/web-drone-screenshot.png" style="max-width:28%" alt="Web Drone Controller"/></p>
 <p class="caption"><a href="http://bit.ly/web-bluetooth-drone">bit.ly/web-bluetooth-drone</a></p></section>
   </div>
   <div class="slide hidden" id="slide-31">
-    <section class="slide-content"><p><h2>In case of demo fail</h2>
-<a href="https://youtu.be/gXu3G3cg52k">bit.ly/web-bluetooth-drone-vid</a></p>
+    <section class="slide-content"><h2 id="in-case-of-demo-fail">In case of demo fail</h2>
+<h3 id="-bit-ly-web-bluetooth-drone-vid-https-youtu-be-gxu3g3cg52k-"><a href="https://youtu.be/gXu3G3cg52k">bit.ly/web-bluetooth-drone-vid</a></h3>
 </section>
   </div>
   <div class="slide hidden" id="slide-32">
-    <section class="slide-content"><h2>Code time</h2></section>
+    <section class="slide-content"><h2 id="code-time">Code time</h2>
+</section>
   </div>
   <div class="slide hidden" id="slide-33">
-    <section class="slide-content"><h2>The physical world is now at your command.</h2></section>
+    <section class="slide-content"><h2 id="-the-physical-world-is-now-at-your-command-"><em>The physical world is now at your command</em></h2>
+</section>
   </div>
   <div class="slide hidden" id="slide-34">
     <section class="slide-content"><h1>Thanks!</h1>
@@ -1221,11 +901,7 @@ function navigate(n) {
  * Updates the current URL to include a hashtag of the current page number.
  */
 function updateURL() {
-  try {
-    window.history.replaceState({} , null, '#' + currentPosition());
-  } catch (e) {
-    window.location.hash = currentPosition();
-  }
+  window.history.replaceState({} , null, '#' + currentPosition());
 }
 
 
@@ -1269,9 +945,9 @@ function updateTabIndex() {
  */
 function isFullScreen() {
   return document.fullscreenElement ||
-         document.mozFullScreenElement ||
-         document.webkitFullscreenElement ||
-         document.msFullscreenElement;
+    document.mozFullScreenElement ||
+    document.webkitFullscreenElement ||
+    document.msFullscreenElement;
 }
 
 /**
@@ -1284,16 +960,16 @@ function toggleFullScreen() {
   var doc = document;
 
   docElem.requestFullscreen =
-      docElem.requestFullscreen ||
-      docElem.msRequestFullscreen ||
-      docElem.mozRequestFullScreen ||
-      docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
+    docElem.requestFullscreen ||
+    docElem.msRequestFullscreen ||
+    docElem.mozRequestFullScreen ||
+    docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
 
   doc.exitFullscreen =
-      doc.exitFullscreen ||
-      doc.msExitFullscreen ||
-      doc.mozCancelFullScreen ||
-      doc.webkitExitFullscreen;
+    doc.exitFullscreen ||
+    doc.msExitFullscreen ||
+    doc.mozCancelFullScreen ||
+    doc.webkitExitFullscreen;
 
   isFullScreen() ? doc.exitFullscreen() : docElem.requestFullscreen();
 }
@@ -1336,6 +1012,31 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+/**
+ * Swipe handling added by Peter
+ */
+
+var SWIPE_X_MIN = 50,
+    startX;
+
+document.body.addEventListener('touchstart', function(e) {
+  e.preventDefault();
+  var touch = e.touches[0];
+  startX = touch.screenX;
+}, false);
+
+document.body.addEventListener('touchend', function(e) {
+  e.preventDefault();
+  var touch = e.changedTouches[0];
+  var swipeXDist = touch.screenX - startX;
+  if (swipeXDist < -SWIPE_X_MIN) {
+    // Swipe to left = move right
+    navigate(1);
+  } else if (swipeXDist > SWIPE_X_MIN) {
+    // Swipe to right = move left
+    navigate(-1);
+  }
+}, false);
 
   </script>
 </body>

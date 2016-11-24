@@ -1,16 +1,15 @@
 title: Web Bluetooth in Action
 output: public/index.html
-style: styles.css
-script: script.js
+theme: peter-theme
 controls: false
 
 --
 
 # Web Bluetooth <br> in Action
 
-<img src="images/ble-logo.png" alt="BLE logo" class="w-100"/>
+<img src="images/ble-logo.png" alt="BLE logo" style="width:12%;"/>
 
-<div class="group-closer">
+<div class="contact">
   <p>Peter O'Shaughnessy</p>
   <p>[@poshaughnessy](https://twitter.com/poshaughnessy)</p>
 </div>
@@ -18,12 +17,12 @@ controls: false
 --
 
 <h2>Samsung Internet</h2>
-<p class="no-margin"><img src="images/samsunginternet5.png" alt="Samsung Internet" width="40%"></p>
+<p class="no-margin"><img src="images/samsunginternet5.png" alt="Samsung Internet" style="width:37%"></p>
 <p class="caption"><a href="http://bit.ly/what-is-samsung-internet">bit.ly/what-is-samsung-internet</a></p>
 
 --
 
-<p class="media-container fill-h">![ByBox](images/bybox-stockonnect.gif)</p>
+<p class="no-margin"><img alt="ByBox" src="images/bybox-stockonnect.gif" style="width:90%; max-height:calc(100vh - 4em)"/></p>
 <p class="caption">[ByBox Stockonnect app by pebble {code} and ByBox](https://www.bybox.com/)</p>
 
 --
@@ -42,7 +41,9 @@ controls: false
 
 --
 
-<p class="media-container fill-h">![Smart Scarf](images/smart-scarf.jpg)</p>
+<p class="no-margin"><img alt="Smart Scarf" src="images/smart-scarf.jpg" style="width:90%; max-height:calc(100vh - 4em)"/></p>
+<p class="caption">[Smart Scarf](https://www.kickstarter.com/projects/679116019/smart-scarf-1st-scarf-that-connects-with-your-phon)</p>
+
 
 --
 
@@ -50,7 +51,7 @@ controls: false
 
 --
 
-<p class="media-container fill-h">![Anki Overdrive](images/anki-overdrive.gif)</p>
+<p class="no-margin"><img alt="Anki Overdrive" src="images/anki-overdrive.gif" style="width:90%; max-height:calc(100vh - 4em)"/></p>
 <p class="caption">[Anki Overdrive](https://anki.com)</p>
 
 --
@@ -59,7 +60,7 @@ controls: false
 
 --
 
-<p class="media-container fill-h">![Smart Monitor SmartWatch](images/smart-watch.jpg)</p>
+<p class="no-margin"><img alt="Smart Monitor SmartWatch" src="images/smart-watch.jpg" style="min-width:80%; max-height:calc(100vh - 4em)"/></p>
 <p class="caption">[Smart Monitor](http://smart-monitor.com/) via [wearable-technologies.com](https://www.wearable-technologies.com/2016/05/wearable-can-save-lives/)</p>
 
 
@@ -67,7 +68,7 @@ controls: false
 
 ## Bluetooth Low Energy
 
-![BLE](images/ble-phone.png)
+<img alt="BLE" src="images/ble-phone.png" style="width:60%"/>
 
 --
 
@@ -78,15 +79,15 @@ controls: false
 <!-- -- -->
 
 <h2>Generic ATTributes (GATT)</h2>
-<p class="media-container"><img src="images/bluetooth-profiles-etc.png" alt="GATT" width="40%"/></p>
+<img src="images/bluetooth-profiles-etc.png" alt="GATT" style="height:55%"/>
 
 --
 
-<p class="media-container"><img src="images/ble-characteristic-props.png" alt="BLE characteristic properties" width="75%"/></p>
+<img src="images/ble-characteristic-props.png" alt="BLE characteristic properties" width="75%"/>
 
 --
 
-<p class="media-container fill-w">![BLE comms](images/bybox-comms.png)</p>
+<img src="images/bybox-comms.png" alt="ByBox comms" width="85%"/>
 
 --
 
@@ -121,29 +122,29 @@ controls: false
 
 <!-- -- -->
 
-* Node *(desktop, native)*
-* React Native *(mobile, native/hybrid)* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-* Cordova *(mobile, hybrid)*
+* Node *(desktop)*
+* React Native *(mobile)* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+* Cordova *(mobile)*<br/><br/>
 
 --
 
-* Node *(desktop, native)*
-* React Native *(mobile, native/hybrid)*
-* Cordova *(mobile, hybrid)*
-* **Web Bluetooth** *(desktop/mobile, web)*
+* Node *(desktop)*
+* React Native *(mobile)*
+* Cordova *(mobile)*
+* **Web Bluetooth** *(desktop/mobile)*
 
 --
 
-![caniuse.com](images/web-bluetooth-caniuse.png)
-<p class="caption">caniuse.com</p>
+<img alt="caniuse.com" src="images/web-bluetooth-caniuse.png" style="width:90%"/>
+<p class="caption"><a href="http://caniuse.com">caniuse.com</a></p>
 
 --
 
 ## Chrome Origin Trial
 
-Until late Jan 2017
+#### Until late Jan 2017
 
-[bit.ly/WebBluetoothOriginTrial](http://bit.ly/WebBluetoothOriginTrial)
+#### [bit.ly/WebBluetoothOriginTrial](http://bit.ly/WebBluetoothOriginTrial)
 
 --
 
@@ -165,7 +166,7 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<p class="media-container fill-h"><img src="images/bluetooth-pairing-prompt.png" alt="Bluetooth pairing prompt"/></p>
+<img src="images/bluetooth-pairing-prompt.png" alt="Bluetooth pairing prompt" style="max-height:95%"/>
 
 --
 
@@ -192,21 +193,21 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<p class="media-container">![Bluetooth friends](images/bluetooth-friends.jpg)</p>
+<img alt="Bluetooth friends" src="images/bluetooth-friends.jpg" width="90%"/>
 
 --
 
-<p class="media-container fill-h">![CySmart](images/cysmart.png)</p>
+<p class="no-margin"><img alt="CySmart" src="images/cysmart.png" style="max-height:calc(100vh - 4em)"/></p>
 <p class="caption">[CySmart with CySmart BLE dongle (Windows)](http://www.cypress.com/documentation/software-and-drivers/cysmart-bluetooth-le-test-and-debug-tool)</p>
 
 --
 
-<p class="media-container">![CySmart app](images/bluetooth-debugging-apps.png)</p>
+<p class="no-margin"><img alt="Bluetooth apps" src="images/bluetooth-debugging-apps.png" style="max-height:calc(100vh - 4em)"/></p>
 <p class="caption">Bluetooth debugging apps: LightBlue, Bluefruit, CySmart</p>
 
 --
 
-<p class="media-container fill-h">![Wireshark](images/adafruit-ble-sniff.jpg)</p>
+<p class="no-margin"><img alt="Wireshark" src="images/adafruit-ble-sniff.jpg" style="max-height:calc(100vh - 4em)"/></p>
 <p class="caption">[Wireshark](https://www.wireshark.org/) with [Bluefruit BLE sniffer](https://shop.pimoroni.com/products/adafruit-bluefruit-le-sniffer-ble-4-0-nrf51822-v1-0)</p>
 
 --
@@ -215,22 +216,21 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<h2>Demo</h2>
-<p class="no-margin"><img src="images/web-drone-screenshot.png" width="30%" alt="Web Drone Controller"/></p>
+<p class="no-margin"><img src="images/web-drone-screenshot.png" style="max-width:28%" alt="Web Drone Controller"/></p>
 <p class="caption">[bit.ly/web-bluetooth-drone](http://bit.ly/web-bluetooth-drone)</p>
 
 --
 
-<h2>In case of demo fail</h2>
-[bit.ly/web-bluetooth-drone-vid](https://youtu.be/gXu3G3cg52k)
+## In case of demo fail
+### [bit.ly/web-bluetooth-drone-vid](https://youtu.be/gXu3G3cg52k)
 
 --
 
-<h2>Code time</h2>
+## Code time
 
 --
 
-<h2>The physical world is now at your command.</h2>
+## *The physical world is now at your command*
 
 --
 
