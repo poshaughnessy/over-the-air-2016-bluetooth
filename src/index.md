@@ -23,6 +23,11 @@ controls: false
 
 --
 
+<p class="media-container fill-h">![ByBox](images/bybox-stockonnect.gif)</p>
+<p class="caption">[ByBox Stockonnect app by pebble {code} and ByBox](https://www.bybox.com/)</p>
+
+--
+
 <h2>The physical world & the digital world are merging...</h2>
 <h2>&nbsp;</h2>
 
@@ -33,8 +38,15 @@ controls: false
 
 --
 
-<p class="media-container fill-h">![ByBox](images/bybox-stockonnect.gif)</p>
-<p class="caption">[ByBox Stockonnect app by pebble {code} and ByBox](https://www.bybox.com/)</p>
+## Some smart objects may be ridiculous...
+
+--
+
+<p class="media-container fill-h">![Smart Scarf](images/smart-scarf.jpg)</p>
+
+--
+
+## But some are fun...
 
 --
 
@@ -42,6 +54,13 @@ controls: false
 <p class="caption">[Anki Overdrive](https://anki.com)</p>
 
 --
+
+## And some can even save lives
+
+--
+
+<p class="media-container fill-h">![Smart Monitor SmartWatch](images/smart-watch.jpg)</p>
+<p class="caption">[Smart Monitor](http://smart-monitor.com/) via [wearable-technologies.com](https://www.wearable-technologies.com/2016/05/wearable-can-save-lives/)</p>
 
 
 --
