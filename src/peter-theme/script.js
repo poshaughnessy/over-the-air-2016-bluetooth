@@ -176,6 +176,7 @@ document.body.addEventListener('touchend', function(e) {
  */
 
 var batteryDemoButton = document.getElementById('btn-battery-demo');
+var batteryDemoOutput = document.getElementById('battery-demo-output');
 
 batteryDemoButton.addEventListener('click', bleBatteryDemo, false);
 
@@ -184,7 +185,11 @@ function isElementVisible(el) {
 }
 
 function updateDemos() {
-  // If we want to make things happen on slide change we can add that here (using isElementVisible)
+
+  if (isElementVisible(batteryDemoOutput)) {
+    batteryDemoOutput.innerHTML = '';
+  }
+
 }
 
 function bleBatteryDemo() {
@@ -192,6 +197,8 @@ function bleBatteryDemo() {
   if (!navigator.bluetooth) {
     return;
   }
+
+  batteryDemoOutput.innerHTML = '';
 
   navigator.bluetooth.requestDevice({
       filters: [{ services: ['battery_service'] }]
@@ -213,9 +220,9 @@ function bleBatteryDemo() {
       return characteristic.readValue();
     })
     .then(function(value) {
-      console.log('Value', value);
       var batteryLevel = value.getUint8(0);
       console.log('Battery level', batteryLevel);
+      batteryDemoOutput.innerHTML = 'Battery level: ' + batteryLevel;
     })
     .catch(function(err) {
       console.error('Bluetooth error', err);

@@ -198,14 +198,15 @@ navigator.bluetooth.requestDevice({
 <img alt="BLE peripheral sim app" src="images/ble-peripheral-sim.png" style="min-width:45%"/>
 <div class="caption">[bit.ly/ble-peripheral-sim](http://bit.ly/ble-peripheral-sim) (Android)</div>
 
+--
+
+<button id="btn-battery-demo">Read battery level</button>
+<div id="battery-demo-output"></div>
+
 -- no-margin
 
 <img alt="Bleno" src="images/bleno.png" style="width: 90%"/>
 <div class="caption">[github.com/sandeepmistry/bleno](github.com/sandeepmistry/bleno)</div>
-
---
-
-<button id="btn-battery-demo">Battery demo</button>
 
 --
 

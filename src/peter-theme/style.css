@@ -655,6 +655,20 @@ pre .xml .cdata {
   max-width: 100px;
 }
 
+#btn-battery-demo {
+  font-size: 2.5em;
+  padding: 8px;
+  border: 0;
+  border-radius: 8px 12px;
+  background-color: #66d9ef;
+  cursor: pointer;
+}
+
+#battery-demo-output {
+  font-size: 1.8em;
+  min-height: 3em;
+}
+
 /* Print styles used for saving to PDF */
 @media print {
   * {
