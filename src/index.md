@@ -172,9 +172,9 @@ navigator.bluetooth.requestDevice({
 
 ```javascript
   ...
-  .then(device => device.connectGATT())
-  .then(server => server.getPrimaryService('batt_service'))
-  .then(service => service.getCharacteristic('batt_level'))
+  .then(device => device.gatt.connect())
+  .then(server => server.getPrimaryService('battery_service'))
+  .then(service => service.getCharacteristic('battery_level'))
   .then(characteristic => {
     // Read battery level
     return characteristic.readValue();
