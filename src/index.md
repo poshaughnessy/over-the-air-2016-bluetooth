@@ -66,7 +66,7 @@ controls: false
 
 --
 
-## Bluetooth Low Energy
+## Bluetooth Low Energy (BLE)
 
 <img alt="BLE" src="images/ble-phone.png" style="width:60%"/>
 
@@ -241,7 +241,27 @@ navigator.bluetooth.requestDevice({
 
 -- no-margin
 
+<img alt="Bluefruit app (Android)" src="images/bluefruit-info.png" style="max-height:calc(100vh - 4em)"/>
+<p class="caption">Bluefruit (Android)</p>
+
+-- no-margin
+
 <img alt="Bluez" src="images/bluez-hcitool-gatttool-1.png" width="90%"/>
+<p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
+
+-- no-margin
+
+<img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom1.png" width="90%"/>
+<p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
+
+-- no-margin
+
+<img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom2.png" width="90%"/>
+<p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
+
+-- no-margin
+
+<img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom3.png" width="90%"/>
 <p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
 
 --
@@ -264,7 +284,15 @@ navigator.bluetooth.requestDevice({
 
 --
 
+<img alt="Hackaball advertising" src="images/advertising-zoom.png" style="max-height:calc(100vh - 4em)"/>
+
+--
+
 <img alt="Hackaball scan response" src="images/scan-response.png" style="max-height:calc(100vh - 4em)"/>
+
+--
+
+<img alt="Hackaball scan response" src="images/scan-response-zoom.png" style="max-height:calc(100vh - 4em)"/>
 
 --
 
@@ -272,11 +300,19 @@ navigator.bluetooth.requestDevice({
 
 --
 
+<img alt="A Hackaball command" src="images/hackaball-sniffing-zoom.png" style="max-height:calc(100vh - 4em)"/>
+
+--
+
+<img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom4.png" width="90%"/>
+
+--
+
 ## Step 3: Testing out 🎲
 
 --
 
-<img alt="Bluez" src="images/bluez-hcitool-gatttool-2.png" width="90%"/>
+<img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom5.png" width="90%"/>
 
 --
 
@@ -304,8 +340,9 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<!--## Code time ⌚️-->
-<!-- -- -->
+## Quick code peek 👀
+
+--
 
 ## *The physical world <br> is at our command* 🤖
 
