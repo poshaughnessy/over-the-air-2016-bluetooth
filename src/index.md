@@ -203,14 +203,14 @@ navigator.bluetooth.requestDevice({
 <img alt="Bleno" src="images/bleno.png" style="width: 90%"/>
 <div class="caption">[github.com/sandeepmistry/bleno](github.com/sandeepmistry/bleno)</div>
 
--- no-margin
+--
 
-<img alt="Problems" src="images/ble-battery-demo-probs.png" style="max-width: 90%"/>
+<img alt="Problems" src="images/ble-battery-demo-probs.png" style="max-width: 80%; max-height: calc(100vh - 5em)"/>
 <div class="caption">Problems! [But had a bit of help :)](https://github.com/WebBluetoothCG/ble-test-peripheral-android/issues/68)</div>
 
 --
 
-<button id="btn-battery-demo">Read battery level 🔋</button>
+<button id="btn-battery-demo">Read battery level</button>
 <div id="battery-demo-output"></div>
 
 --
@@ -241,7 +241,7 @@ navigator.bluetooth.requestDevice({
 
 -- no-margin
 
-<img alt="Bluez" src="images/bluez-hcitool-gatttool.png" width="90%"/>
+<img alt="Bluez" src="images/bluez-hcitool-gatttool-1.png" width="90%"/>
 <p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
 
 --
@@ -257,6 +257,18 @@ navigator.bluetooth.requestDevice({
 
 <img alt="ble-sniffer-osx" src="images/ble-sniffer-osx.png" style="max-height:calc(100vh - 4em)"/>
 <p class="caption">[ble-sniffer-osx](https://sourceforge.net/projects/nrfblesnifferosx/)</p>
+
+--
+
+<img alt="Actual Hackaball sniffing" src="images/hackaball-sniffing.png" style="max-height:calc(100vh - 4em)"/>
+
+--
+
+## Step 3: Testing out 🎲
+
+--
+
+<img alt="Bluez" src="images/bluez-hcitool-gatttool-2.png" width="90%"/>
 
 --
 

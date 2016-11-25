@@ -222,7 +222,7 @@ function bleBatteryDemo() {
     .then(function(value) {
       var batteryLevel = value.getUint8(0);
       console.log('Battery level', batteryLevel);
-      batteryDemoOutput.innerHTML = 'Battery level: ' + batteryLevel;
+      batteryDemoOutput.innerHTML = 'Battery level: ' + batteryLevel + '  🔋';
     })
     .catch(function(err) {
       console.error('Bluetooth error', err);
