@@ -227,21 +227,7 @@ navigator.bluetooth.requestDevice({
 
 --
 
-## Step 1: Sniffing 👃
-
--- no-margin
-
-<img alt="Wireshark" src="images/adafruit-ble-sniff.jpg" style="max-height:calc(100vh - 4em)"/>
-<p class="caption">[Wireshark](https://www.wireshark.org/) with [Bluefruit BLE sniffer](https://shop.pimoroni.com/products/adafruit-bluefruit-le-sniffer-ble-4-0-nrf51822-v1-0)</p>
-
--- no-margin
-
-<img alt="ble-sniffer-osx" src="images/ble-sniffer-osx.png" style="max-height:calc(100vh - 4em)"/>
-<p class="caption">[ble-sniffer-osx](https://sourceforge.net/projects/nrfblesnifferosx/)</p>
-
---
-
-## Step 2: Exploring 🔍
+## Step 1: Exploring 🔍
 
 -- no-margin
 
@@ -257,6 +243,20 @@ navigator.bluetooth.requestDevice({
 
 <img alt="Bluez" src="images/bluez-hcitool-gatttool.png" width="90%"/>
 <p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
+
+--
+
+## Step 2: Sniffing 👃
+
+-- no-margin
+
+<img alt="Wireshark" src="images/adafruit-ble-sniff.jpg" style="max-height:calc(100vh - 4em)"/>
+<p class="caption">[Wireshark](https://www.wireshark.org/) with [Bluefruit BLE sniffer](https://shop.pimoroni.com/products/adafruit-bluefruit-le-sniffer-ble-4-0-nrf51822-v1-0)</p>
+
+-- no-margin
+
+<img alt="ble-sniffer-osx" src="images/ble-sniffer-osx.png" style="max-height:calc(100vh - 4em)"/>
+<p class="caption">[ble-sniffer-osx](https://sourceforge.net/projects/nrfblesnifferosx/)</p>
 
 --
 
