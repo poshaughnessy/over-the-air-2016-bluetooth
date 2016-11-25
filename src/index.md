@@ -260,7 +260,15 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<img alt="Actual Hackaball sniffing" src="images/hackaball-sniffing.png" style="max-height:calc(100vh - 4em)"/>
+<img alt="Hackaball advertising" src="images/advertising.png" style="max-height:calc(100vh - 4em)"/>
+
+--
+
+<img alt="Hackaball scan response" src="images/scan-response.png" style="max-height:calc(100vh - 4em)"/>
+
+--
+
+<img alt="A Hackaball command" src="images/hackaball-sniffing.png" style="max-height:calc(100vh - 4em)"/>
 
 --
 
@@ -280,8 +288,13 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<p class="no-margin"><img src="images/web-drone-screenshot.png" style="max-width:28%" alt="Web Drone Controller"/></p>
+<img alt="Parrot mini drone" src="images/min-drone.jpg" style="max-height:calc(100vh - 4em)"/>
 <p class="caption">[bit.ly/web-bluetooth-drone](http://bit.ly/web-bluetooth-drone)</p>
+
+--
+
+<p class="no-margin"><img src="images/web-drone-screenshot.png" style="max-width:28%" alt="Web Drone Controller"/></p>
+<p class="caption">[https://webdr.one](https://webdr.one)</p>
 
 --
 
@@ -290,7 +303,8 @@ navigator.bluetooth.requestDevice({
 
 --
 
-## Code time ⌚️
+<!--## Code time ⌚️-->
+<!-- -- -->
 
 --
 
