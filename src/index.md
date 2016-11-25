@@ -5,7 +5,7 @@ controls: false
 
 --
 
-# Web Bluetooth <br> in Action
+# Web Bluetooth <br> in Action <img src="images/clapper-board.png" alt="Action!" style="height:1em;"/>
 
 <img src="images/ble-logo.png" alt="BLE logo" style="width:12%;"/>
 
@@ -27,17 +27,17 @@ controls: false
 
 --
 
-<h2>The physical world & the digital world are merging...</h2>
+<h2>The physical world & the digital world are merging 🔀</h2>
 <h2>&nbsp;</h2>
 
 --
 
-<h2>The physical world & the digital world are merging...</h2>
-<h2>*...And your smartphone is at the centre.*</h2>
+<h2>The physical world & the digital world are merging 🔀</h2>
+<h2>*...And your smartphone is at the centre* 📱</h2>
 
 --
 
-## Some smart objects may be ridiculous...
+## Some smart objects may be a bit "out there" 👽
 
 --
 
@@ -47,7 +47,7 @@ controls: false
 
 --
 
-## But some are fun...
+## But some are cool 😎
 
 --
 
@@ -56,7 +56,7 @@ controls: false
 
 --
 
-## And some can even save lives
+## And some can even save lives 🏥
 
 --
 
@@ -210,12 +210,12 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<button id="btn-battery-demo">Read battery level</button>
+<button id="btn-battery-demo">Read battery level 🔋</button>
 <div id="battery-demo-output"></div>
 
 --
 
-## I wanted to make a new demo...
+## The story of my new demo attempt 📖
 
 --
 
@@ -227,7 +227,7 @@ navigator.bluetooth.requestDevice({
 
 --
 
-## Step 1: Sniffing
+## Step 1: Sniffing 👃
 
 -- no-margin
 
@@ -241,7 +241,7 @@ navigator.bluetooth.requestDevice({
 
 --
 
-## Step 2: Exploring
+## Step 2: Exploring 🔍
 
 -- no-margin
 
@@ -260,15 +260,11 @@ navigator.bluetooth.requestDevice({
 
 --
 
-## More reverse engineering required
-
-<img src="images/reverse-engineer.gif" alt="Reverse" width="70%"/>
+## More reverse engineering required ⏪
 
 --
 
-## So here's one I made earlier...
-
-<img src="images/one-i-made-earlier.jpg" alt="Made earlier" width="50%"/>
+## So here's one I made earlier... 🎁
 
 --
 
@@ -277,20 +273,20 @@ navigator.bluetooth.requestDevice({
 
 --
 
-## In case of demo fail
+## In case of demo fail 🔥
 ### [bit.ly/web-bluetooth-drone-vid](https://youtu.be/gXu3G3cg52k)
 
 --
 
-## Code time
+## Code time ⌚️
 
 --
 
-## *The physical world is <br> now at your command*
+## *The physical world is <br> now at your command* 🤖
 
 --
 
-<h1>Thanks!</h1>
+<h1>Thanks! 🙏</h1>
 
 <div class="contact">
   <p>Peter O'Shaughnessy</p>

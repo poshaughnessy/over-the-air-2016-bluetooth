@@ -670,6 +670,10 @@ pre .xml .cdata {
   min-height: 3em;
 }
 
+h1 img {
+  vertical-align: text-top;
+}
+
 /* Print styles used for saving to PDF */
 @media print {
   * {
