@@ -47,7 +47,7 @@ controls: false
 
 --
 
-## But some are cool 😎
+## But some are fun 🎮
 
 --
 
@@ -140,17 +140,17 @@ controls: false
 
 --
 
+<img src="images/web-bluetooth-flag.png" alt="Web Bluetooth flag" style="width:90%"/>
+
+Intent to ship in m56: [bit.ly/intent-to-ship-web-bluetooth-chrome](bit.ly/intent-to-ship-web-bluetooth-chrome)
+
+--
+
 ## Chrome Origin Trial
 
 #### Until late Jan 2017
 
 #### [bit.ly/WebBluetoothOriginTrial](http://bit.ly/WebBluetoothOriginTrial)
-
---
-
-<img src="images/web-bluetooth-flag.png" alt="Web Bluetooth flag" style="width:90%"/>
-
-Intent to ship in m56: [bit.ly/intent-to-ship-web-bluetooth-chrome](bit.ly/intent-to-ship-web-bluetooth-chrome)
 
 --
 
@@ -193,6 +193,13 @@ navigator.bluetooth.requestDevice({
 
 <div class="caption">[bit.ly/chrome-bluetooth-guide](http://bit.ly/chrome-bluetooth-guide)</div>
 
+--
+
+* 8 bits
+* = 1 byte
+* = 0-255
+* = 2 hex characters (`0xFF === 255`)
+
 -- no-margin
 
 <img alt="BLE peripheral sim app" src="images/ble-peripheral-sim.png" style="min-width:45%"/>
@@ -206,7 +213,7 @@ navigator.bluetooth.requestDevice({
 --
 
 <img alt="Problems" src="images/ble-battery-demo-probs.png" style="max-width: 80%; max-height: calc(100vh - 5em)"/>
-<div class="caption">Problems! [But had a bit of help :)](https://github.com/WebBluetoothCG/ble-test-peripheral-android/issues/68)</div>
+<div class="caption">*Problems! [But had a bit of help :)](https://github.com/WebBluetoothCG/ble-test-peripheral-android/issues/68)*</div>
 
 --
 
@@ -223,7 +230,16 @@ navigator.bluetooth.requestDevice({
 
 --
 
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">THEY TRIED TO MAKE ME GO TO DALEK REHAB. I SAID... <a href="https://t.co/fouAcwl02g">pic.twitter.com/fouAcwl02g</a></p>&mdash; Peter&#39;s Dalek (@petersdalek) <a href="https://twitter.com/petersdalek/status/759788828030676992">July 31, 2016</a></blockquote>
+
+--
+
+<video src="videos/ScaryDinoRobot.mp4" controls width="30%"/>
+
+-- no-margin
+
 <img alt="Hackaball" src="images/hackaball.jpg" width="90%"/>
+<p class="caption">[hackaball.com](http://www.hackaball.com/)</p>
 
 --
 

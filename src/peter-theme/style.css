@@ -674,6 +674,10 @@ h1 img {
   vertical-align: text-top;
 }
 
+.twitter-tweet {
+  margin: 0 auto !important;
+}
+
 /* Print styles used for saving to PDF */
 @media print {
   * {
