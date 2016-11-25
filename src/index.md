@@ -289,7 +289,8 @@ navigator.bluetooth.requestDevice({
 --
 
 <img alt="Parrot mini drone" src="images/min-drone.jpg" style="max-height:calc(100vh - 4em)"/>
-<p class="caption">[bit.ly/web-bluetooth-drone](http://bit.ly/web-bluetooth-drone)</p>
+
+#### [bit.ly/web-bluetooth-drone](http://bit.ly/web-bluetooth-drone)
 
 --
 
@@ -306,9 +307,7 @@ navigator.bluetooth.requestDevice({
 <!--## Code time ⌚️-->
 <!-- -- -->
 
---
-
-## *The physical world is <br> now at your command* 🤖
+## *The physical world <br> is at our command* 🤖
 
 --
 
