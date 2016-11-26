@@ -1,7 +1,7 @@
 title: Web Bluetooth in Action
 output: public/index.html
 theme: peter-theme
-controls: false
+controls: true
 
 --
 
@@ -72,12 +72,6 @@ controls: false
 
 --
 
-<!--<img src="images/ble-logo.png" alt="BLE logo" class="w-200"/>-->
-<!--* Can constantly advertise presence-->
-<!--* Can last years on coin cell batteries-->
-<!--* ~100 kbps throughput (vs 24 Mbps!)-->
-<!-- -- -->
-
 <h2>Generic ATTributes (GATT)</h2>
 <img src="images/bluetooth-profiles-etc.png" alt="GATT" style="max-height:70vh"/>
 
@@ -91,46 +85,9 @@ controls: false
 
 --
 
-<!--## Hex in JavaScript-->
-<!--* `0xff === 255`-->
-<!--* `parseInt('ff', 16) === 255`-->
-<!--* ArrayBuffer, Uint8Array and DataView-->
-<!-- [bit.ly/html5-rocks-typed-arrays-guide](http://www.html5rocks.com/en/tutorials/webgl/typed_arrays/) -->
-<!-- -- -->
-
-<!--```javascript-->
-<!--// Length of 12 bytes-->
-<!--let buffer = new ArrayBuffer(12);-->
-
-<!-- // ...Read data into the buffer... -->
-
-<!--let array = new Uint8Array(buffer);-->
-
-<!--// Gives e.g. 255 / 0xff:-->
-<!--let my8BitInt = array[0];-->
-<!-- ``` -->
-
-<!-- -- -->
-
-<!--```javascript-->
-<!--let buffer = new ArrayBuffer(12);-->
-<!--let dataView = new DataView(buffer);-->
-
-<!--// Gives e.g. 255 / 0xff:-->
-<!--let my8BitInt = dataView.getUint8(0);-->
-<!--```-->
-
-<!-- -- -->
-
-* Node *(desktop)*
-* React Native *(mobile)* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-* Cordova *(mobile)*<br/><br/>
-
---
-
 * Node *(desktop)*
 * React Native *(mobile)*
-* Cordova *(mobile)*
+* Cordova *(mobile)*<br/><br/>
 * **Web Bluetooth** *(desktop/mobile)*
 
 --
