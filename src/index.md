@@ -87,7 +87,7 @@ controls: true
 
 * Node *(desktop)*
 * React Native *(mobile)*
-* Cordova *(mobile)*<br/><br/>
+* Cordova *(mobile)*
 * **Web Bluetooth** *(desktop/mobile)*
 
 --
