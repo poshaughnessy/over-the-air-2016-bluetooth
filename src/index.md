@@ -223,22 +223,22 @@ navigator.bluetooth.requestDevice({
 -- no-margin
 
 <img alt="Bluez" src="images/bluez-hcitool-gatttool-1.png" width="90%"/>
-<p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
+<p class="caption">*Update: Please note [these tools are deprecated](https://github.com/poshaughnessy/over-the-air-2016-bluetooth/issues/2)* - [BlueZ](http://www.bluez.org/about/)</p>
 
 -- no-margin
 
 <img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom1.png" width="90%"/>
-<p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
+<p class="caption">*Update: Please note [these tools are deprecated](https://github.com/poshaughnessy/over-the-air-2016-bluetooth/issues/2)* - [BlueZ](http://www.bluez.org/about/)</p>
 
 -- no-margin
 
 <img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom2.png" width="90%"/>
-<p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
+<p class="caption">*Update: Please note [these tools are deprecated](https://github.com/poshaughnessy/over-the-air-2016-bluetooth/issues/2)* - [BlueZ](http://www.bluez.org/about/)</p>
 
 -- no-margin
 
 <img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom3.png" width="90%"/>
-<p class="caption">[BlueZ](http://www.bluez.org/about/)</p>
+<p class="caption">*Update: Please note [these tools are deprecated](https://github.com/poshaughnessy/over-the-air-2016-bluetooth/issues/2)* - [BlueZ](http://www.bluez.org/about/)</p>
 
 --
 
@@ -280,7 +280,7 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom4.png" width="90%"/>
+<p class="caption">*Update: Please note [these tools are deprecated](https://github.com/poshaughnessy/over-the-air-2016-bluetooth/issues/2)* - [BlueZ](http://www.bluez.org/about/)</p>
 
 --
 
