@@ -191,7 +191,10 @@ navigator.bluetooth.requestDevice({
 
 --
 
-<video src="videos/ScaryDinoRobot.mp4" controls width="30%"/>
+<video controls width="30%">
+  <source src="videos/ScaryDinoRobot.webm"/>
+  <source src="videos/ScaryDinoRobot.mp4"/>
+</video>
 
 -- no-margin
 
