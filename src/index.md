@@ -278,17 +278,19 @@ navigator.bluetooth.requestDevice({
 
 <img alt="A Hackaball command" src="images/hackaball-sniffing-zoom.png" style="max-height:calc(100vh - 4em)"/>
 
---
+-- no-margin
 
+<img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom4.png" width="90%"/>
 <p class="caption">*Update: Please note [these tools are deprecated](https://github.com/poshaughnessy/over-the-air-2016-bluetooth/issues/2)* - [BlueZ](http://www.bluez.org/about/)</p>
 
 --
 
 ## Step 3: Testing out 🎲
 
---
+-- no-margin
 
 <img alt="Bluez" src="images/bluez-hcitool-gatttool-zoom5.png" width="90%"/>
+<p class="caption">*Update: Please note [these tools are deprecated](https://github.com/poshaughnessy/over-the-air-2016-bluetooth/issues/2)* - [BlueZ](http://www.bluez.org/about/)</p>
 
 --
 
